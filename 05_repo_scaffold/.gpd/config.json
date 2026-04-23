@@ -1,0 +1,17 @@
+{
+  "autonomy": "high",
+  "research_mode": "control-pack-preservation",
+  "parallelization": true,
+  "commit_docs": true,
+  "model_profile": "deep-review",
+  "execution": {
+    "review_cadence": "gate_change_only",
+    "reporting": "blockers_only",
+    "completion_contract": "control_truth_preserved_or_explicit_blocker"
+  },
+  "workflow": {
+    "research": true,
+    "plan_checker": true,
+    "verifier": true
+  }
+}
