@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-04-24T00:00:00+00:00",
+  "sources": {
+    "dataset_repo": {
+      "repo_url": "https://example.invalid/cuneiform-fixture",
+      "git_revision": "deadbeefcafef00d"
+    }
+  },
+  "summary": {
+    "annotated_tablet_count": 3,
+    "annotated_vat_tablet_count": 0,
+    "annotation_counts_by_split": { "train": 2, "test": 1 },
+    "available_sign_record_count": 4,
+    "background_annotation_count": 0,
+    "download_counts": { "fixture": 2 },
+    "downloaded_gib": 0.0,
+    "downloaded_tablet_count": 2,
+    "free_gib_after": 0.0,
+    "missing_tablet_count": 1,
+    "overlap_label_count": 1,
+    "record_count": 5,
+    "test_label_count": 1,
+    "train_label_count": 2
+  },
+  "sign_records": [
+    {"record_id": 1, "tablet_cdli": "TAB-A", "image_sha256": "0000000000000000000000000000000000000000000000000000000000000001", "split": "train", "mzl_label": "001", "train_label": "001", "is_background": false},
+    {"record_id": 2, "tablet_cdli": "TAB-A", "image_sha256": "0000000000000000000000000000000000000000000000000000000000000002", "split": "train", "mzl_label": "001", "train_label": "001", "is_background": false},
+    {"record_id": 3, "tablet_cdli": "TAB-B", "image_sha256": "0000000000000000000000000000000000000000000000000000000000000003", "split": "train", "mzl_label": "002", "train_label": "002", "is_background": false},
+    {"record_id": 4, "tablet_cdli": "TAB-B", "image_sha256": "0000000000000000000000000000000000000000000000000000000000000004", "split": "test",  "mzl_label": "002", "train_label": "002", "is_background": false}
+  ],
+  "tablets": [
+    {"tablet_id": "T1", "tablet_cdli": "TAB-A", "image_sha256": "00000000000000000000000000000000000000000000000000000000000000aa", "annotated_sign_count": 2, "annotated_segment_count": 2},
+    {"tablet_id": "T2", "tablet_cdli": "TAB-B", "image_sha256": "00000000000000000000000000000000000000000000000000000000000000bb", "annotated_sign_count": 2, "annotated_segment_count": 2}
+  ],
+  "missing_tablets_preview": [
+    {"tablet_cdli": "TAB-X", "error": "synthetic-fixture-missing"}
+  ]
+}

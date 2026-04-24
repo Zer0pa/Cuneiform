@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-04-24T00:00:00+00:00",
+  "sources": {
+    "dataset_repo": {
+      "repo_url": "https://example.invalid/cuneiform-fixture",
+      "git_revision": "deadbeefcafef00d"
+    }
+  },
+  "summary": {
+    "annotated_tablet_count": 99,
+    "annotated_vat_tablet_count": 0,
+    "annotation_counts_by_split": { "train": 2, "test": 1 },
+    "available_sign_record_count": 999,
+    "background_annotation_count": 0,
+    "download_counts": { "fixture": 2 },
+    "downloaded_gib": 0.0,
+    "downloaded_tablet_count": 99,
+    "free_gib_after": 0.0,
+    "missing_tablet_count": 1,
+    "overlap_label_count": 1,
+    "record_count": 5,
+    "test_label_count": 1,
+    "train_label_count": 2
+  },
+  "sign_records": [
+    {"record_id": 1, "tablet_cdli": "TAB-A", "image_sha256": "0000000000000000000000000000000000000000000000000000000000000001"}
+  ],
+  "tablets": [
+    {"tablet_id": "T1", "tablet_cdli": "TAB-A", "image_sha256": "00000000000000000000000000000000000000000000000000000000000000aa"}
+  ],
+  "missing_tablets_preview": [
+    {"tablet_cdli": "TAB-X"}
+  ]
+}

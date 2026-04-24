@@ -1,40 +1,82 @@
 {
   "_version": 1,
-  "_synced_at": "2026-04-24T00:00:00+02:00",
+  "_synced_at": "2026-04-24T02:00:00+02:00",
   "workstream": "gnosis-cuneiform",
   "authority_metric": "control_truth_preserved",
   "governing_source_verdict": "NO_GO_GOVERNING_GATE_UNMET",
   "governing_1nn_accuracy": 0.021916,
-  "current_phase": "02",
-  "current_phase_name": "Minimal Rerun Or Manifest Smoke",
+  "current_phase": "PRD_COMPLETE",
+  "current_phase_name": "—",
   "status": "HOLD_CONTROL_ONLY",
-  "progress": 55,
-  "resume": ".gpd/phases/02-minimal-rerun-or-manifest-smoke/02-01-PLAN.md",
-  "previous_phase": {
-    "id": "01",
-    "name": "Control Boundary And Rerun Ledger",
-    "closed_at": "2026-04-24",
-    "summary": ".gpd/phases/01-control-boundary-and-rerun-ledger/01-01-SUMMARY.md",
-    "artifacts": [
-      "docs/PATH_REWRITE_LEDGER.md",
-      "docs/MINIMAL_SMOKE_TARGET.md"
-    ],
-    "governing_gate_delta": "unchanged"
-  },
+  "progress": 100,
+  "resume": null,
+  "previous_phases": [
+    {
+      "id": "00",
+      "name": "Truth-Surface Bootstrap",
+      "closed_at": "2026-04-23",
+      "summary": ".gpd/phases/00-workstream-bootstrap/00-01-SUMMARY.md",
+      "governing_gate_delta": "unchanged"
+    },
+    {
+      "id": "01",
+      "name": "Control Boundary And Rerun Ledger",
+      "closed_at": "2026-04-24",
+      "summary": ".gpd/phases/01-control-boundary-and-rerun-ledger/01-01-SUMMARY.md",
+      "artifacts": [
+        "docs/PATH_REWRITE_LEDGER.md",
+        "docs/MINIMAL_SMOKE_TARGET.md",
+        "docs/HF_DATASET_PLAN.md"
+      ],
+      "governing_gate_delta": "unchanged"
+    },
+    {
+      "id": "02",
+      "name": "Minimal Rerun Or Manifest Smoke",
+      "closed_at": "2026-04-24",
+      "summary": ".gpd/phases/02-minimal-rerun-or-manifest-smoke/02-01-SUMMARY.md",
+      "artifacts": [
+        "code/cuneiform_control/__init__.py",
+        "code/cuneiform_control/schemas/benchmark_manifest.schema.json",
+        "code/cuneiform_control/smoke/run_manifest_validation.py",
+        "docs/evidence/ARTEFACT_CHECKSUMS.md",
+        "artefacts/smoke/manifest_validation_report.json",
+        "artefacts/smoke/hf_upload_verify.json"
+      ],
+      "smoke_verdict": "PASS",
+      "hf_dataset_revision": "c64e22f671dcce1577233309fd3320258dbd2e09",
+      "governing_gate_delta": "unchanged"
+    },
+    {
+      "id": "03",
+      "name": "Control-Pack Handover",
+      "closed_at": "2026-04-24",
+      "summary": ".gpd/phases/03-control-pack-handover/03-01-SUMMARY.md",
+      "artifacts": [
+        "pyproject.toml",
+        "tests/test_smoke_runner.py",
+        "tests/fixtures/manifest_min_pass.json",
+        "tests/fixtures/manifest_min_fail_invariant.json"
+      ],
+      "self_test_results": "3/3 pass on host (macOS python3)",
+      "local_tag": "v0.1.0-internal (annotated, not pushed)",
+      "governing_gate_delta": "unchanged"
+    }
+  ],
   "blockers": [
     "public promotion blocked by failed governing gate",
-    "raw image and corpus redistribution blocked by unresolved rights"
+    "raw image and corpus redistribution blocked by unresolved rights",
+    "licence text OWNER_DEFERRED; remote tag push and public release forbidden"
   ],
-  "next_actions": [
-    "author Phase 02 plan 02-01-PLAN.md",
-    "create HF dataset Zer0pa/cuneiform-control-artefacts (private) and upload pinned manifests",
-    "author code/cuneiform_control/schemas/benchmark_manifest.schema.json",
-    "extract minimum helper module per path-rewrite ledger group A",
-    "execute SMOKE-01-MANIFEST-VALIDATION and emit deterministic report"
-  ],
+  "next_actions": [],
   "remote": {
     "github": "https://github.com/Zer0pa/Cuneiform",
     "visibility": "INTERNAL",
-    "default_branch": "main"
+    "default_branch": "main",
+    "huggingface": {
+      "dataset": "Zer0pa/cuneiform-control-artefacts",
+      "visibility": "private",
+      "revision": "c64e22f671dcce1577233309fd3320258dbd2e09"
+    }
   }
 }

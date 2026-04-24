@@ -2,48 +2,49 @@
 
 ## Current Position
 
-Current phase: `02`
-Current phase name: Minimal Rerun Or Manifest Smoke
+Current phase: PRD COMPLETE
+Current phase name: —
 Status: `HOLD_CONTROL_ONLY`
 Last activity: 2026-04-24
 
-Progress: 55%
+Progress: 100% of in-scope work for this PRD.
 
-## Phase 01 Close (2026-04-24)
+## PRD Close (2026-04-24)
 
-Phase 01 `01-control-boundary-and-rerun-ledger` is complete.
+All four phases closed. Governing verdict **unchanged** through every phase.
 
-- Path-rewrite ledger frozen: `docs/PATH_REWRITE_LEDGER.md`.
-- Minimal smoke target admitted: `docs/MINIMAL_SMOKE_TARGET.md`
-  (`SMOKE-01-MANIFEST-VALIDATION`).
-- Phase summary: `.gpd/phases/01-control-boundary-and-rerun-ledger/01-01-SUMMARY.md`.
-- Governing verdict `NO_GO_GOVERNING_GATE_UNMET` **unchanged**; governing
-  metric `governing_1nn_accuracy = 0.021916` **unchanged**.
-- Repo remote wired: `https://github.com/Zer0pa/Cuneiform` (INTERNAL, `main`).
+| Phase | Status | Closed | Summary |
+|---|---|---|---|
+| 00 Truth-Surface Bootstrap | Complete | 2026-04-23 | `.gpd/phases/00-workstream-bootstrap/00-01-SUMMARY.md` |
+| 01 Control Boundary And Rerun Ledger | Complete | 2026-04-24 | `.gpd/phases/01-control-boundary-and-rerun-ledger/01-01-SUMMARY.md` |
+| 02 Minimal Rerun Or Manifest Smoke | Complete | 2026-04-24 | `.gpd/phases/02-minimal-rerun-or-manifest-smoke/02-01-SUMMARY.md` |
+| 03 Control-Pack Handover | Complete | 2026-04-24 | `.gpd/phases/03-control-pack-handover/03-01-SUMMARY.md` |
 
-## Active Work (Phase 02)
+Smoke verdict: `SMOKE-01-MANIFEST-VALIDATION` = **PASS** against the real
+upstream manifest (SHA-256 `e4d85a…3daa24`, 9,280,260 bytes).
 
-- Execute `SMOKE-01-MANIFEST-VALIDATION` per the admitted spec.
-- Create HF dataset `Zer0pa/cuneiform-control-artefacts` and populate with the
-  pinned manifests.
-- Author `code/cuneiform_control/schemas/benchmark_manifest.schema.json`.
-- Extract the minimum helper module per the path-rewrite ledger (group A only).
-- Emit the deterministic smoke report with verdict, checksums, and schema hash.
+HF custody: `Zer0pa/cuneiform-control-artefacts` (private), revision
+`c64e22f671dcce1577233309fd3320258dbd2e09`.
 
-## Open Questions
+Local tag: `v0.1.0-internal` (annotated; **not** pushed to remote).
 
-- Exact SHA-256 of the current `annotated_sign_benchmark_manifest.json` — to be
-  recorded in `docs/evidence/ARTEFACT_CHECKSUMS.md` as Phase 02 opens.
-- Whether HF dataset visibility is `private` or `public` for INTERNAL custody —
-  default to `private` pending owner ruling.
+## Active Work
 
-## Blockers
+None. There is no next-phase work scheduled in this lane.
 
-- Public promotion remains blocked by `NO_GO_GOVERNING_GATE_UNMET`.
-- Raw image and corpus redistribution remains blocked by unresolved rights.
-- Phase 02 smoke execution is **not** blocked; it proceeds on Phase 02 entry.
+## Open Questions (carried as known unknowns, not blockers)
+
+- Whether `revert_phase2_common.py` exists upstream under a different name. Not
+  blocking; recorded as `S-06` `UPSTREAM_NOT_PRESENT` in
+  `docs/evidence/ARTEFACT_CHECKSUMS.md`.
+
+## Permanent Blockers (until external gate-repair event)
+
+- Public promotion blocked by `NO_GO_GOVERNING_GATE_UNMET`.
+- Raw image/corpus redistribution blocked by unresolved rights.
+- Licence text `OWNER_DEFERRED`; blocks any remote tag push or public release.
 
 ## Resume
 
-Resume from `.gpd/phases/02-minimal-rerun-or-manifest-smoke/02-01-PLAN.md`
-(to be authored at Phase 02 entry).
+Resume only if a separate workstream repairs the governing gate on new
+scientific evidence. On that event, open `/gpd:new-milestone` here.

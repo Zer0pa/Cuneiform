@@ -32,12 +32,12 @@
 
 | Upstream source | Classification | Destination in this repo | Phase that extracts | Custody note |
 |---|---|---|---|---|
-| `scripts/cuneiform/annotated_sign_benchmark_common.py` | `CUNEIFORM_SPECIFIC` | `code/cuneiform_control/benchmark_common.py` | Phase 02 | strip monorepo helper imports; re-root as a package module |
-| `scripts/cuneiform/revert_phase2_common.py` | `CUNEIFORM_SPECIFIC` | `code/cuneiform_control/rerun_phase2_common.py` | Phase 02 | rename retires the imperative `revert_` prefix; semantics preserved |
-| `scripts/cuneiform/benchmark_annotated_sign_tokenizer.py` | `CUNEIFORM_SPECIFIC` | `code/cuneiform_control/bench_tokenizer.py` | Phase 02 | entry point for tokenizer benchmark rerun |
-| `scripts/cuneiform/probe_annotated_sign_tokenizer_1nn.py` | `CUNEIFORM_SPECIFIC` | `code/cuneiform_control/probe_1nn.py` | Phase 02 | produces the frozen governing metric `governing_1nn_accuracy` |
-| `scripts/cuneiform/benchmark_annotated_sign_p8.py` | `CUNEIFORM_SPECIFIC` (diagnostic) | `code/cuneiform_control/bench_p8_diagnostic.py` | Phase 02 | P6 diagnostic only — **never** promoted as gate closure |
-| `scripts/cuneiform/corrected_structural_benchmark.py` | `CUNEIFORM_SPECIFIC` (diagnostic) | `code/cuneiform_control/bench_structural_diagnostic.py` | Phase 02 | P7 diagnostic only — **never** promoted as gate closure |
+| `scripts/cuneiform/annotated_sign_benchmark_common.py` | `CUNEIFORM_SPECIFIC` | `code/cuneiform_control/benchmark_common.py` | Phase 03+ | SHA-256 `S-01` pinned; strip monorepo helper imports; re-root as a package module |
+| `scripts/cuneiform/revert_phase2_common.py` | `UPSTREAM_NOT_PRESENT` | — | — | **NOT FOUND** on upstream pod 2026-04-24 (Phase 02 audit); see `ARTEFACT_CHECKSUMS.md` `S-06`. Removed from extraction scope; rename decision retired. |
+| `scripts/cuneiform/benchmark_annotated_sign_tokenizer.py` | `CUNEIFORM_SPECIFIC` | `code/cuneiform_control/bench_tokenizer.py` | Phase 03+ | SHA-256 `S-02` pinned; entry point for tokenizer benchmark rerun |
+| `scripts/cuneiform/probe_annotated_sign_tokenizer_1nn.py` | `CUNEIFORM_SPECIFIC` | `code/cuneiform_control/probe_1nn.py` | Phase 03+ | SHA-256 `S-03` pinned; produces the frozen governing metric `governing_1nn_accuracy` |
+| `scripts/cuneiform/benchmark_annotated_sign_p8.py` | `CUNEIFORM_SPECIFIC` (diagnostic) | `code/cuneiform_control/bench_p8_diagnostic.py` | Phase 03+ | SHA-256 `S-04` pinned; P6 diagnostic only — **never** promoted as gate closure |
+| `scripts/cuneiform/probe_annotated_sign_p8_1nn.py` | `CUNEIFORM_SPECIFIC` (diagnostic) | `code/cuneiform_control/probe_p8_1nn_diagnostic.py` | Phase 03+ | SHA-256 `S-05` pinned; P7 diagnostic only — **never** promoted as gate closure (replaces the speculative `corrected_structural_benchmark.py` entry retired during Phase 02 audit) |
 
 ### B. Shared-method candidates (excluded from this lane)
 
@@ -93,7 +93,8 @@ settled.
 
 | Decision | Rationale |
 |---|---|
-| Rename `revert_phase2_common` → `rerun_phase2_common` | `revert_` suggests rollback semantics that do not match the code's role as a rerun helper; rename makes the control-pack intent explicit. |
+| ~~Rename `revert_phase2_common` → `rerun_phase2_common`~~ **RETIRED 2026-04-24** | File not present on upstream pod; rename moot. Recorded as `UPSTREAM_NOT_PRESENT` in `ARTEFACT_CHECKSUMS.md`. |
+| Add `probe_annotated_sign_p8_1nn.py` (P7 diagnostic) to admitted set | Pod audit confirmed file exists; replaces the speculative `corrected_structural_benchmark.py` entry which was inherited from `SOURCE_BOUNDARY.md` but has not been verified on upstream. |
 | Keep P6 and P7 scripts with `_diagnostic` suffix | Extraction is permitted, but the suffix enforces the invariant that these are never substituted for the failed P5 governing gate. |
 | HF staging rather than in-tree JSON | `DATA_POLICY.md` tags derived manifests `PUBLISH_WITH_REVIEW`; HF with checksum records respects that without blocking future reruns. |
 | Repo visibility `INTERNAL` | Matches the PRD: public promotion is blocked while `NO_GO_GOVERNING_GATE_UNMET` stands. |

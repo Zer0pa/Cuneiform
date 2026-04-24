@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Zer0pa/Cuneiform/schemas/benchmark_manifest.schema.json",
+  "title": "Cuneiform Annotated-Sign Benchmark Manifest",
+  "description": "Conservative schema for annotated_sign_benchmark_manifest.json (M-01 / M-02). Validates structure only; the smoke runner enforces value invariants (sha256, counts) on top.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "sources",
+    "summary",
+    "sign_records",
+    "tablets",
+    "missing_tablets_preview"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "description": "ISO 8601 timestamp"
+    },
+    "sources": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "dataset_repo": {
+          "type": "object",
+          "required": ["repo_url", "git_revision"],
+          "additionalProperties": true,
+          "properties": {
+            "repo_url": { "type": "string", "format": "uri" },
+            "git_revision": { "type": "string", "minLength": 7 }
+          }
+        },
+        "vat_archive": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "annotated_tablet_count",
+        "available_sign_record_count",
+        "downloaded_tablet_count",
+        "missing_tablet_count",
+        "record_count",
+        "train_label_count",
+        "test_label_count",
+        "overlap_label_count"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "annotated_tablet_count": { "type": "integer", "minimum": 0 },
+        "annotated_vat_tablet_count": { "type": "integer", "minimum": 0 },
+        "annotation_counts_by_split": {
+          "type": "object",
+          "additionalProperties": { "type": "integer", "minimum": 0 }
+        },
+        "available_sign_record_count": { "type": "integer", "minimum": 0 },
+        "background_annotation_count": { "type": "integer", "minimum": 0 },
+        "download_counts": {
+          "type": "object",
+          "additionalProperties": { "type": "integer", "minimum": 0 }
+        },
+        "downloaded_gib": { "type": "number", "minimum": 0 },
+        "downloaded_tablet_count": { "type": "integer", "minimum": 0 },
+        "free_gib_after": { "type": "number" },
+        "missing_tablet_count": { "type": "integer", "minimum": 0 },
+        "overlap_label_count": { "type": "integer", "minimum": 0 },
+        "record_count": { "type": "integer", "minimum": 0 },
+        "test_label_count": { "type": "integer", "minimum": 0 },
+        "train_label_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "sign_records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["record_id", "tablet_cdli", "image_sha256"],
+        "additionalProperties": true,
+        "properties": {
+          "record_id": { "type": ["string", "integer"] },
+          "tablet_cdli": { "type": "string" },
+          "image_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "split": { "type": ["string", "null"] },
+          "mzl_label": { "type": ["string", "integer", "null"] },
+          "train_label": { "type": ["string", "integer", "null"] },
+          "is_background": { "type": "boolean" }
+        }
+      }
+    },
+    "tablets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["tablet_id", "tablet_cdli", "image_sha256"],
+        "additionalProperties": true,
+        "properties": {
+          "tablet_id": { "type": ["string", "integer"] },
+          "tablet_cdli": { "type": "string" },
+          "image_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "annotated_sign_count": { "type": "integer", "minimum": 0 },
+          "annotated_segment_count": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "missing_tablets_preview": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["tablet_cdli"],
+        "additionalProperties": true,
+        "properties": {
+          "tablet_cdli": { "type": "string" },
+          "error": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

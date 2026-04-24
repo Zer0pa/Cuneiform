@@ -8,16 +8,21 @@
       cuneiform-specific rerun slice, source ledger, and data custody path.
       (Closed 2026-04-24; governing verdict `NO_GO_GOVERNING_GATE_UNMET`
       unchanged.)
-- [ ] **Phase 02: Minimal Rerun Or Manifest Smoke** - Execute the smallest
+- [x] **Phase 02: Minimal Rerun Or Manifest Smoke** - Execute the smallest
       repo-local check that proves the rerun contract is not narrative-only.
-- [ ] **Phase 03: Control-Pack Handover** - Package only control-pack truth and
+      (Closed 2026-04-24; smoke verdict `PASS`; HF custody at revision
+      `c64e22f671dcce1577233309fd3320258dbd2e09`; governing verdict unchanged.)
+- [x] **Phase 03: Control-Pack Handover** - Package only control-pack truth and
       keep public promotion blocked unless the failed gate changes on evidence.
+      (Closed 2026-04-24; pyproject.toml ships, self-test 3/3 pass on host,
+      handover surfaces updated, governing verdict unchanged.)
 
 ## Current Gate
 
-Phase 01 passes only if a fresh agent can identify exactly which files are
-cuneiform-specific, where they would land, what data they need, and what first
-smoke target proves the boundary.
+PRD complete (Phases 00–03 closed 2026-04-24). The lane is held in
+`HOLD_CONTROL_ONLY` posture. The next gate is **external**: a separate
+workstream must repair `NO_GO_GOVERNING_GATE_UNMET` on new scientific
+evidence before any new milestone opens here.
 
 ## Stop Conditions
 
@@ -31,5 +36,5 @@ smoke target proves the boundary.
 |---|---|---|
 | 00. Truth-Surface Bootstrap | Complete | 2026-04-23 |
 | 01. Control Boundary And Rerun Ledger | Complete | 2026-04-24 |
-| 02. Minimal Rerun Or Manifest Smoke | Active next | - |
-| 03. Control-Pack Handover | Pending | - |
+| 02. Minimal Rerun Or Manifest Smoke | Complete | 2026-04-24 |
+| 03. Control-Pack Handover | Complete | 2026-04-24 |
