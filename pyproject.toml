@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cuneiform_control"
+version = "0.1.0"
+description = "Control-pack manifest validation for the cuneiform benchmark lane. Stdlib-only. Does not repair the failed governing gate."
+readme = "code/README.md"
+requires-python = ">=3.8"
+license = { text = "OWNER_DEFERRED" }
+authors = [
+  { name = "Zer0pa Architects" }
+]
+keywords = ["cuneiform", "benchmark", "control-pack", "smoke", "manifest-validation"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering",
+  "Private :: Do Not Upload"
+]
+# Intentionally empty: the smoke runner is stdlib-only by design.
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/Zer0pa/Cuneiform"
+Evidence = "https://github.com/Zer0pa/Cuneiform/blob/main/docs/evidence/CUNEIFORM_PHASE2_GATE_STATUS.md"
+PathRewriteLedger = "https://github.com/Zer0pa/Cuneiform/blob/main/docs/PATH_REWRITE_LEDGER.md"
+HFCustodyRegister = "https://github.com/Zer0pa/Cuneiform/blob/main/docs/HF_CUSTODY_REGISTER.md"
+
+[project.scripts]
+cuneiform-smoke = "cuneiform_control.smoke.run_manifest_validation:main"
+
+[tool.setuptools.packages.find]
+where = ["code"]
+include = ["cuneiform_control*"]
+
+[tool.setuptools.package-data]
+cuneiform_control = ["schemas/*.json"]
