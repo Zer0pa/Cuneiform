@@ -51,6 +51,12 @@ Required preserved truths:
 | HF upload verify report | `PUBLISH_NOW` | `05_repo_scaffold/artefacts/smoke/hf_upload_verify.json` |
 | `M-01..M-06` manifests | `PUBLISH_WITH_REVIEW` | HF `Zer0pa/cuneiform-control-artefacts` (private) revision `c64e22f671dcce1577233309fd3320258dbd2e09` |
 
+## Executor Status Report (for review team)
+
+| Artefact | Custody | Path |
+|---|---|---|
+| Executor status report | `PUBLISH_NOW` | `05_repo_scaffold/docs/EXECUTOR_STATUS_REPORT.md` |
+
 ## Phase 03 Artefacts (closed 2026-04-24)
 
 | Artefact | Custody | Path |

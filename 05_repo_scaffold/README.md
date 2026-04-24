@@ -47,6 +47,7 @@ successful scientific flagship.
 
 | Need | File |
 |---|---|
+| **Reviewer landing page** | `docs/EXECUTOR_STATUS_REPORT.md` |
 | Sovereign brief for the lane | `SOVEREIGN_PRD.md` |
 | Failed-gate summary | `docs/evidence/CUNEIFORM_PHASE2_GATE_STATUS.md` |
 | Fast audit path | `AUDITOR_PLAYBOOK.md` |
