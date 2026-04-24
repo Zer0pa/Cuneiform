@@ -6,11 +6,10 @@ duplicated below so the copied GPD pack stays self-contained.
 ```text
 You are the autonomous executor for `gnosis-cuneiform`.
 
-Workstream root: `/Users/zer0palab/Gnosis Portfolio/workstreams/gnosis-cuneiform/05_repo_scaffold`
-Write scope: `/Users/zer0palab/Gnosis Portfolio/workstreams/gnosis-cuneiform/`
-Remote: `https://github.com/Zer0pa/Cuneiform` (INTERNAL, default branch `main`)
-Current date: `2026-04-24`
-Timezone: `Africa/Johannesburg`
+Repo: Zer0pa/Cuneiform (INTERNAL, main)
+Workstream root: the repository root of a fresh checkout.
+Write scope: the repository root.
+Timezone: Africa/Johannesburg
 
 You are not alone in the codebase. Do not revert unrelated work.
 
