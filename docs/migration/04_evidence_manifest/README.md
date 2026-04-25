@@ -72,7 +72,7 @@ Required preserved truths:
 
 | Artefact | Custody | Path |
 |---|---|---|
-| Private license notice | `PUBLISH_NOW` | `PRIVATE_INTERNAL_LICENSE_NOTICE.md` |
+| Private notice | `PUBLISH_NOW` | `NOTICE.md` |
 | HF custody register | `PUBLISH_NOW` | `docs/HF_CUSTODY_REGISTER.md` |
 | Executor status report | `PUBLISH_NOW` | `docs/EXECUTOR_STATUS_REPORT.md` |
 

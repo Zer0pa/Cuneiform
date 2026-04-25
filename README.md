@@ -74,7 +74,6 @@ mechanically checkable from a fresh checkout.
 | Path | What Lives Here |
 |---|---|
 | `NOTICE.md` | Root legal posture. Private internal; no public licence granted. |
-| `PRIVATE_INTERNAL_LICENSE_NOTICE.md` | Longer-form internal licence detail (kept; references `NOTICE.md`). |
 | `README.md`, `SOVEREIGN_PRD.md`, `AUDITOR_PLAYBOOK.md`, `AGENTS.md` | Front door, sovereign brief, reviewer entry, agent brief. |
 | `SOURCE_BOUNDARY.md`, `DATA_POLICY.md`, `GOVERNANCE.md`, `RELEASING.md`, `PUBLIC_AUDIT_LIMITS.md` | Policy surfaces. |
 | `code/cuneiform_control/` | Stdlib-only smoke runner + JSON Schema. |

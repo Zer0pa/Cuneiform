@@ -9,8 +9,8 @@
 > **Closeout pass addendum (2026-04-24, same day):** the repo was flattened
 > (former `05_repo_scaffold/*` promoted to root; transfer-artefact folders
 > preserved under `docs/migration/`), operational paths/endpoints were
-> scrubbed to symbolic placeholders, a `PRIVATE_INTERNAL_LICENSE_NOTICE.md`
-> was added, and HF custody was re-verified and recorded in
+> scrubbed to symbolic placeholders, a private legal notice was added, and
+> HF custody was re-verified and recorded in
 > `docs/HF_CUSTODY_REGISTER.md`. Scientific provenance (SHA-256 pins, metric
 > values, HF revision, verdicts) is **unchanged**.
 
@@ -101,7 +101,7 @@ The smoke is custody-only by construction. It cannot move the gate.
 | `revert_phase2_common.py` | `SOURCE_BOUNDARY.md` inherited this filename, and I could not find it on the upstream pod. I recorded `UPSTREAM_NOT_PRESENT` rather than inventing a path. | Ledger amended; decision retired; `PATH_REWRITE_LEDGER.md` decision log carries the dated retirement note. | If you know this file lives under a different name (or in a different repo), open an evidence dispute so I can re-pin correctly. |
 | `corrected_structural_benchmark.py` | Also inherited from `SOURCE_BOUNDARY.md`; I could not verify its presence on the pod in the time budget I gave myself. I replaced it with the verified `probe_annotated_sign_p8_1nn.py`. | Replacement justified and logged. | If the original filename is canonical for the P7 diagnostic, push back — I'll re-audit. |
 | Path drift in `UNIVERSAL_STARTUP_PROMPT.md` | The template shipped hard-coded to a local absolute path; I rewrote it to the workstream root relative to a fresh checkout of the repo. The closeout pass removed the remaining local-path leakage. | Executive decision, logged. | Confirm the rewrite is correct for whoever the next executor is. |
-| Licence posture | I marked `LICENSE_PLACEHOLDER.md` as `OWNER_DEFERRED` and hard-locked everything against public release/remote tag push. Closeout added `PRIVATE_INTERNAL_LICENSE_NOTICE.md`. I did not **author** a licence — that is owner work. | Private notice only. | Owner decision needed before any release gate can ever clear. |
+| Licence posture | I marked the interim placeholder posture as `OWNER_DEFERRED` and hard-locked everything against public release/remote tag push. The current root legal posture is `NOTICE.md`. I did not **author** a public licence — that is owner work. | Private notice only. | Owner decision needed before any release gate can ever clear. |
 
 ## Candid Operational Note
 
@@ -128,7 +128,7 @@ reviewers are entitled to override.
 | Smoke executed on pod (CPU-only, 32 vCPU) | `artefacts/smoke/manifest_validation_report.json` |
 | HF dataset created private + 6 uploads + post-upload verify | `artefacts/smoke/hf_upload_verify.json`; HF revision `c64e22f6…` |
 | Phase 03 handover: `pyproject.toml`, front-door doc rewrites, `v0.1.0-internal` tag (local-only) | Commit `4619876` pushed to `main` |
-| Closeout pass: flatten repo root, scrub operational paths, add `PRIVATE_INTERNAL_LICENSE_NOTICE.md`, record `HF_CUSTODY_REGISTER.md`, add `--manifest-label` CLI flag, re-run smoke with scrubbed label | Closeout commit (this commit) pushed to `main` |
+| Closeout pass: flatten repo root, scrub operational paths, add private notice, record `HF_CUSTODY_REGISTER.md`, add `--manifest-label` CLI flag, re-run smoke with scrubbed label | Closeout commit (this commit) pushed to `main` |
 
 All commits are on `main`. Working tree is clean.
 
