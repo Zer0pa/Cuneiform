@@ -53,6 +53,76 @@ Re-run from the shared `<RUNPOD_HOST>` pod using `huggingface_hub 1.11.0`.
 | SHA-256 verify | 6/6 OK against `docs/evidence/ARTEFACT_CHECKSUMS.md` pins |
 | All verified | `true` |
 
+## Verification 4 — 2026-04-26 (HF storage split per GNOSIS_HF_STORAGE_EXECUTION_BRIEF_2026-04-26)
+
+Per `GNOSIS_HF_STORAGE_EXECUTION_BRIEF_2026-04-26.md` §1.2 (storage
+economics), §3 (Gnosis routing), §4 (thresholds), §7.4 (Cuneiform
+guidance). Heavy artefacts moved to canonical `Architect-Prime/*`
+store; `Zer0pa/*` reduced to the lightweight discovery surface.
+
+### Split decision (per §4 thresholds)
+
+Three files on Zer0pa exceed the single-file threshold (> 1 MB):
+
+| ID | Bytes | Threshold call |
+|---|---:|---|
+| M-01 | 9,280,260 | heavy (>1 MB) → AP canonical |
+| M-02 | 9,280,260 | heavy (>1 MB; byte-identical to M-01) → AP canonical |
+| M-03 | 27,684,873 | heavy (>1 MB; P6 diagnostic) → AP canonical |
+| M-04 | 471,305 | lightweight (<1 MB; P6 review) → kept on Zer0pa as backup |
+| M-05 | 1,880 | trivial (P7 probe) → kept on Zer0pa as backup |
+| M-06 | 4,466 | trivial (review-pack index) → kept on Zer0pa as backup |
+
+Total Zer0pa storage reduction: 46.73 MB → 0.486 MB (≈ 46.25 MB
+returned to org private quota).
+
+### `Architect-Prime/cuneiform-control-artefacts` — created
+
+| Key | Value |
+|---|---|
+| Token user | `Architect-Prime` |
+| Token org membership | `['Zer0pa']` |
+| Repo created | 2026-04-26 |
+| Repo type | `dataset` |
+| Visibility | `private` (hard-locked: brief §1.3 — never make AP Gnosis repo public) |
+| Initial revision | `03ad7397dc12be58289481ff8a209349c6ed9042` |
+| Last modified | `2026-04-26 19:26:39+00:00` |
+| Files on AP | `README.md`, `M-01..M-06`, `.gitattributes` (8 files) |
+| Total bytes | ~46.7 MB |
+| Post-upload SHA-256 verify | 6/6 OK against `docs/evidence/ARTEFACT_CHECKSUMS.md` pins |
+
+### `Zer0pa/cuneiform-control-artefacts` — reduced to lightweight surface
+
+| Key | Value |
+|---|---|
+| Previous revision | `1d26b9168eb7ac5a765e8a869f03501840d16347` (post HF lane brief card rewrite) |
+| New revision | `e08e1694c337a8298d92c058b416053b04f239f6` (post storage split) |
+| Last modified | `2026-04-26 19:28:01+00:00` |
+| Visibility | `private` (unchanged) |
+| Files remaining | `README.md` (lightweight card), `M-04`, `M-05`, `M-06`, `.gitattributes` (5 files) |
+| Total bytes | 485,992 (0.486 MB) |
+| Files removed | `M-01`, `M-02`, `M-03` (the three >1 MB files) |
+| SHA-256 verify (M-04..M-06) | 3/3 OK at new revision |
+
+### Routing model (now in effect for cuneiform lane)
+
+| Use case | Source |
+|---|---|
+| Quick review / discovery / SHA pin lookup | `Zer0pa/cuneiform-control-artefacts` (lightweight) |
+| Re-hash of M-04..M-06 | `Zer0pa/cuneiform-control-artefacts` |
+| Re-hash of M-01..M-03 (heavy) | `Architect-Prime/cuneiform-control-artefacts` (canonical) |
+| Smoke runner real-manifest replay (full M-01) | `Architect-Prime/cuneiform-control-artefacts` |
+
+### Non-negotiables honoured
+
+- No public licence implication on either side (Gnosis non-negotiable).
+- `Architect-Prime/cuneiform-control-artefacts` will not be made public
+  (brief §1.3 hard rule).
+- No model weights, no pixel data, no operational endpoints uploaded
+  anywhere.
+- No deletion of pinned scientific provenance — bytes preserved at AP.
+- No new naming under deprecated `Cipher` (brief §1.1).
+
 ## Verification 3 — 2026-04-26 (HF lane brief execution)
 
 Per `HF_LANE_EXECUTION_BRIEF_2026-04-26.md` (Gnosis family rules, §4.4).
@@ -96,16 +166,18 @@ Re-run under the production HF token from local macOS using
 | Card update | **Yes** — done in this verification (rev `1d26b91…`). |
 | Architect-Prime cleanup | **N/A.** No drift exists. |
 
-## Files Under Custody
+## Files Under Custody (post-2026-04-26 split)
 
-| ID | Filename | SHA-256 (pinned) | Bytes | Rights class | Diagnostic-only? | Consuming GitHub ref |
+| ID | Filename | SHA-256 (pinned) | Bytes | Rights class | Diagnostic-only? | Hosted on |
 |---|---|---|---|---|---|---|
-| `M-01` | `M-01_annotated_sign_benchmark_manifest.json` | `e4d85abf3bfa6901a6b20f7c612f1113e77ef9173ca42e00c9867b88b23daa24` | 9,280,260 | `PUBLISH_WITH_REVIEW` | no | `docs/evidence/ARTEFACT_CHECKSUMS.md` M-01 |
-| `M-02` | `M-02_05_annotated_sign_benchmark_manifest.json` | `e4d85abf3bfa6901a6b20f7c612f1113e77ef9173ca42e00c9867b88b23daa24` | 9,280,260 | `PUBLISH_WITH_REVIEW` | no (byte-identical to M-01) | `docs/evidence/ARTEFACT_CHECKSUMS.md` M-02 |
-| `M-03` | `M-03_06_annotated_sign_p8_manifest.json` | `05fc8505df0b408d8044d6beb39c96adef53370e81c280a84779c543fd90b574` | 27,684,873 | `PUBLISH_WITH_REVIEW` | **yes — P8/P6** | `docs/evidence/ARTEFACT_CHECKSUMS.md` M-03 |
-| `M-04` | `M-04_07_annotated_sign_p8_benchmark.json` | `5fd933bcf706387c58ac5bccbdd434362901ec1d77f057e532440776005baeba` | 471,305 | `PUBLISH_WITH_REVIEW` | **yes — P6** | `docs/evidence/ARTEFACT_CHECKSUMS.md` M-04 |
-| `M-05` | `M-05_08_annotated_sign_p8_1nn_probe.json` | `c896572754d24442c90cce81e750d05e4af4707119ca5b8e7f077ce2879a590a` | 1,880 | `PUBLISH_WITH_REVIEW` | **yes — P7** | `docs/evidence/ARTEFACT_CHECKSUMS.md` M-05 |
-| `M-06` | `M-06_09_REVIEW_PACK_MANIFEST.json` | `7163eae78448b73bd924f508575b2d1de1df4b94c6e39e14d669ae85f82a4aa9` | 4,466 | `PUBLISH_WITH_REVIEW` | no | `docs/evidence/ARTEFACT_CHECKSUMS.md` M-06 |
+| `M-01` | `M-01_annotated_sign_benchmark_manifest.json` | `e4d85abf3bfa6901a6b20f7c612f1113e77ef9173ca42e00c9867b88b23daa24` | 9,280,260 | `PUBLISH_WITH_REVIEW` | no | **Architect-Prime** (canonical) |
+| `M-02` | `M-02_05_annotated_sign_benchmark_manifest.json` | `e4d85abf3bfa6901a6b20f7c612f1113e77ef9173ca42e00c9867b88b23daa24` | 9,280,260 | `PUBLISH_WITH_REVIEW` | no (byte-identical to M-01) | **Architect-Prime** (canonical) |
+| `M-03` | `M-03_06_annotated_sign_p8_manifest.json` | `05fc8505df0b408d8044d6beb39c96adef53370e81c280a84779c543fd90b574` | 27,684,873 | `PUBLISH_WITH_REVIEW` | **yes — P8/P6** | **Architect-Prime** (canonical) |
+| `M-04` | `M-04_07_annotated_sign_p8_benchmark.json` | `5fd933bcf706387c58ac5bccbdd434362901ec1d77f057e532440776005baeba` | 471,305 | `PUBLISH_WITH_REVIEW` | **yes — P6** | both (Zer0pa lightweight + AP canonical) |
+| `M-05` | `M-05_08_annotated_sign_p8_1nn_probe.json` | `c896572754d24442c90cce81e750d05e4af4707119ca5b8e7f077ce2879a590a` | 1,880 | `PUBLISH_WITH_REVIEW` | **yes — P7** | both (Zer0pa lightweight + AP canonical) |
+| `M-06` | `M-06_09_REVIEW_PACK_MANIFEST.json` | `7163eae78448b73bd924f508575b2d1de1df4b94c6e39e14d669ae85f82a4aa9` | 4,466 | `PUBLISH_WITH_REVIEW` | no | both (Zer0pa lightweight + AP canonical) |
+
+GitHub cross-reference for all six pins: `docs/evidence/ARTEFACT_CHECKSUMS.md`.
 
 ## Files Forbidden Under Custody
 

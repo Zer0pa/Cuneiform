@@ -13,6 +13,14 @@
 > HF custody was re-verified and recorded in
 > `docs/HF_CUSTODY_REGISTER.md`. Scientific provenance (SHA-256 pins, metric
 > values, HF revision, verdicts) is **unchanged**.
+>
+> **HF storage split addendum (2026-04-26):** per
+> `GNOSIS_HF_STORAGE_EXECUTION_BRIEF_2026-04-26.md`, heavy manifests
+> (M-01..M-03, all >1 MB; total ~46.25 MB) moved to canonical
+> `Architect-Prime/cuneiform-control-artefacts` (private). Zer0pa org repo
+> reduced to lightweight discovery surface (card + M-04..M-06, total
+> 0.486 MB). All 6 SHA-256 pins re-verified at the new revisions on both
+> sides; scientific provenance and metric values **unchanged**.
 
 ## TL;DR
 

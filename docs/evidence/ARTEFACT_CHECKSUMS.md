@@ -10,20 +10,33 @@
 1. Source paths are on the shared pod under `<MONOREPO>/` (see closeout brief
    for the canonical operational registry).
 2. SHA-256 computed via `sha256sum` on the pod.
-3. Files are not vendored into git; they are routed to HF dataset
-   `<HF_ORG>/cuneiform-control-artefacts` (private) and re-verified post-upload.
-   See `docs/HF_CUSTODY_REGISTER.md` for the token-verified HF state.
+3. Files are not vendored into git; they are routed to HF (private) and
+   re-verified post-upload. **Two-tier hosting (post-2026-04-26 split):**
+   - `Architect-Prime/cuneiform-control-artefacts` (canonical heavy store):
+     all 6 manifests M-01..M-06 (private; never made public).
+   - `Zer0pa/cuneiform-control-artefacts` (lightweight discovery surface):
+     M-04, M-05, M-06 only (M-01..M-03 removed; they are >1 MB and live
+     canonically on Architect-Prime per
+     `GNOSIS_HF_STORAGE_EXECUTION_BRIEF_2026-04-26.md` §4 thresholds).
+   See `docs/HF_CUSTODY_REGISTER.md` for the token-verified HF state and
+   the full split rationale.
 
 ## Pinned Manifests (admitted under `DATA_POLICY` `PUBLISH_WITH_REVIEW`)
 
-| ID | SHA-256 | Bytes | Upstream path | Diagnostic-only? |
-|---|---|---|---|---|
-| `M-01` | `e4d85abf3bfa6901a6b20f7c612f1113e77ef9173ca42e00c9867b88b23daa24` | 9,280,260 | `workspace/artifacts/cuneiform/annotated_sign_benchmark_manifest.json` | no — primary benchmark manifest (P5 input substrate) |
-| `M-02` | `e4d85abf3bfa6901a6b20f7c612f1113e77ef9173ca42e00c9867b88b23daa24` | 9,280,260 | `workspace/share/science_engineering_review_2026-04-10/05_annotated_sign_benchmark_manifest.json` | no — review-pack copy of `M-01` (byte-identical) |
-| `M-03` | `05fc8505df0b408d8044d6beb39c96adef53370e81c280a84779c543fd90b574` | 27,684,873 | `workspace/share/science_engineering_review_2026-04-10/06_annotated_sign_p8_manifest.json` | yes — P8 / P6 diagnostic |
-| `M-04` | `5fd933bcf706387c58ac5bccbdd434362901ec1d77f057e532440776005baeba` | 471,305 | `workspace/share/science_engineering_review_2026-04-10/07_annotated_sign_p8_benchmark.json` | yes — P6 diagnostic benchmark output |
-| `M-05` | `c896572754d24442c90cce81e750d05e4af4707119ca5b8e7f077ce2879a590a` | 1,880 | `workspace/share/science_engineering_review_2026-04-10/08_annotated_sign_p8_1nn_probe.json` | yes — P7 diagnostic probe output |
-| `M-06` | `7163eae78448b73bd924f508575b2d1de1df4b94c6e39e14d669ae85f82a4aa9` | 4,466 | `workspace/share/science_engineering_review_2026-04-10/09_REVIEW_PACK_MANIFEST.json` | no — review-pack index |
+| ID | SHA-256 | Bytes | Upstream path | Diagnostic-only? | HF host |
+|---|---|---|---|---|---|
+| `M-01` | `e4d85abf3bfa6901a6b20f7c612f1113e77ef9173ca42e00c9867b88b23daa24` | 9,280,260 | `workspace/artifacts/cuneiform/annotated_sign_benchmark_manifest.json` | no — primary benchmark manifest (P5 input substrate) | AP canonical |
+| `M-02` | `e4d85abf3bfa6901a6b20f7c612f1113e77ef9173ca42e00c9867b88b23daa24` | 9,280,260 | `workspace/share/science_engineering_review_2026-04-10/05_annotated_sign_benchmark_manifest.json` | no — review-pack copy of `M-01` (byte-identical) | AP canonical |
+| `M-03` | `05fc8505df0b408d8044d6beb39c96adef53370e81c280a84779c543fd90b574` | 27,684,873 | `workspace/share/science_engineering_review_2026-04-10/06_annotated_sign_p8_manifest.json` | yes — P8 / P6 diagnostic | AP canonical |
+| `M-04` | `5fd933bcf706387c58ac5bccbdd434362901ec1d77f057e532440776005baeba` | 471,305 | `workspace/share/science_engineering_review_2026-04-10/07_annotated_sign_p8_benchmark.json` | yes — P6 diagnostic benchmark output | both |
+| `M-05` | `c896572754d24442c90cce81e750d05e4af4707119ca5b8e7f077ce2879a590a` | 1,880 | `workspace/share/science_engineering_review_2026-04-10/08_annotated_sign_p8_1nn_probe.json` | yes — P7 diagnostic probe output | both |
+| `M-06` | `7163eae78448b73bd924f508575b2d1de1df4b94c6e39e14d669ae85f82a4aa9` | 4,466 | `workspace/share/science_engineering_review_2026-04-10/09_REVIEW_PACK_MANIFEST.json` | no — review-pack index | both |
+
+`AP canonical` = `Architect-Prime/cuneiform-control-artefacts` (private,
+revision `03ad7397dc12be58289481ff8a209349c6ed9042`).
+`both` = canonical on AP **and** lightweight backup on
+`Zer0pa/cuneiform-control-artefacts` (private, revision
+`e08e1694c337a8298d92c058b416053b04f239f6`).
 
 ## Pinned Source Scripts (referenced; extraction deferred per ledger)
 
