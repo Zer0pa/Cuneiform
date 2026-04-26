@@ -53,6 +53,49 @@ Re-run from the shared `<RUNPOD_HOST>` pod using `huggingface_hub 1.11.0`.
 | SHA-256 verify | 6/6 OK against `docs/evidence/ARTEFACT_CHECKSUMS.md` pins |
 | All verified | `true` |
 
+## Verification 3 — 2026-04-26 (HF lane brief execution)
+
+Per `HF_LANE_EXECUTION_BRIEF_2026-04-26.md` (Gnosis family rules, §4.4).
+Re-run under the production HF token from local macOS using
+`huggingface_hub 1.8.0` (pod offline at execution time).
+
+| Key | Value |
+|---|---|
+| Token user | `Architect-Prime` |
+| Token org membership | `['Zer0pa']` |
+| Repo exists | **Yes** — visible to the production token |
+| Current revision | `1d26b9168eb7ac5a765e8a869f03501840d16347` (**new**: card rewrite) |
+| Previous revision | `c64e22f671dcce1577233309fd3320258dbd2e09` |
+| Current visibility | `private` (unchanged) |
+| Last modified | `2026-04-26 18:32:34+00:00` |
+| SHA-256 verify (manifests M-01..M-06) | 6/6 OK against pinned values (unchanged from V1/V2) |
+| All verified | `true` |
+| Card change | `README.md` rewritten to HF lane brief §5 template (Gnosis-family posture; no SAL; no public-licence implication; mirrors root `NOTICE.md`); **manifest payloads untouched** |
+| Pin commit on GitHub source | `bdca3f8` (`repo: replace interim notices with canonical Phase 1 text`) — recorded in the new card's "Source" section |
+
+### HF lane discovery (executed 2026-04-26)
+
+- `Zer0pa` namespace (datasets, all `private`):
+  `cuneiform-control-artefacts` (this repo) plus 14 unrelated lane
+  datasets (ZPE-XR, Zer0paShip, glyph-engine, gnosis-indus,
+  gnosis-morph-bench (×2), kv-3d, research-brain, knowledge-graph,
+  ship-hull-designs, image-codec, imc-benchmark/canonical, taste-restart).
+- `Zer0pa` namespace (models): `gnosis-indus-models` (private) — not in
+  cuneiform scope.
+- `Architect-Prime` namespace cuneiform-related repos: **none found**.
+  No drift to clean up.
+
+### HF lane decision (per Gnosis family rules)
+
+| Question | Answer |
+|---|---|
+| Public/private | **Private.** No change. |
+| Migrate from another namespace | **No.** Already canonical. |
+| Create new HF repo(s) | **No.** Existing surface is sufficient. |
+| Push additional artefacts | **No.** No new manifests admitted by ledger. |
+| Card update | **Yes** — done in this verification (rev `1d26b91…`). |
+| Architect-Prime cleanup | **N/A.** No drift exists. |
+
 ## Files Under Custody
 
 | ID | Filename | SHA-256 (pinned) | Bytes | Rights class | Diagnostic-only? | Consuming GitHub ref |
