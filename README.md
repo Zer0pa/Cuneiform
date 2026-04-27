@@ -1,6 +1,41 @@
-> **Notice:** This is a private internal repository. See `NOTICE.md`.
-
 # Gnosis Cuneiform
+
+## Licensing
+
+This repository is part of the Zer0pa Gnosis Portfolio.
+
+**Code** in this repository is licensed under the Apache License 2.0. See
+`LICENSE` for the full text. SPDX identifier: `Apache-2.0`.
+
+**Documentation, reports, and written materials** are licensed under Creative
+Commons Attribution 4.0 International. SPDX identifier: `CC-BY-4.0`. Canonical
+terms: <https://creativecommons.org/licenses/by/4.0/>.
+
+**Data and fixtures** are handled per dataset and artifact family. See
+`DATA_POLICY.md` for this repository's data boundary. The code license does not
+license raw corpora, image-bearing cultural-heritage assets, private HF
+artifacts, model weights, endpoint logs, or operational transcripts.
+
+**Trademarks** - "Gnosis", "Zer0pa Gnosis", and distinctive sub-marks are
+trademarks of Zer0pa. Apache-2.0 and CC-BY-4.0 do not grant trademark rights.
+See `TRADEMARKS.md`.
+
+Public visibility is a separate repository-setting action. The license files in
+this repo define the intended open-source/open-documentation terms for released
+Gnosis code and written materials; they do not publish rights-gated data.
+
+
+## Traditional-Knowledge Acknowledgment
+
+This repository works with material in cuneiform-bearing writing systems
+(Sumerian, Akkadian, Babylonian, and related). Zer0pa claims no proprietary
+right over cuneiform, its scripts, or the archaeological record.
+
+This repository preserves a negative-control result as a first-class output; it
+does not claim a definitive decipherment of cuneiform or related scripts.
+
+Good-faith inquiries from identified communities, governmental antiquity
+authorities, or institutional bodies may be sent to architects@zer0pa.ai.
 
 ## What This Is
 
@@ -74,7 +109,7 @@ mechanically checkable from a fresh checkout.
 
 | Path | What Lives Here |
 |---|---|
-| `NOTICE.md` | Root legal posture. Private internal; no public licence granted. |
+| `NOTICE` | Apache-2.0 code license plus CC-BY-4.0 documentation posture. |
 | `README.md`, `SOVEREIGN_PRD.md`, `AUDITOR_PLAYBOOK.md`, `AGENTS.md` | Front door, sovereign brief, reviewer entry, agent brief. |
 | `SOURCE_BOUNDARY.md`, `DATA_POLICY.md`, `GOVERNANCE.md`, `RELEASING.md`, `PUBLIC_AUDIT_LIMITS.md` | Policy surfaces. |
 | `code/cuneiform_control/` | Stdlib-only smoke runner + JSON Schema. |
@@ -132,9 +167,9 @@ pinned SHA-256. It **does not** repair `NO_GO_GOVERNING_GATE_UNMET`.
   the checksum register, not a blocker for this lane.
 - Image-bearing sources and some upstream datasets remain rights-constrained
   or fetch-only; pixel-bearing data is never vendored.
-- Zer0pa legal has not yet selected the canonical licence matrix
-  (`OWNER_DEFERRED`). No remote tag push and no public visibility change
-  until that decision lands.
+- The repository license matrix has landed (`Apache-2.0` for code,
+  `CC-BY-4.0` for docs). No remote tag push and no public visibility change
+  until rights-gated data and release wording are reviewed.
 - `NO_GO_GOVERNING_GATE_UNMET` remains the sovereign scientific truth.
   Repairing it is **out of scope** for this lane and is external work for a
   separate workstream (likely `gnosis-glyph-engine` or

@@ -26,7 +26,7 @@ rights and provenance posture.
 
 ## Current Blocking Inputs
 
-- final license text
+- explicit redistribution ruling for image-bearing assets
 - explicit redistribution ruling for image-bearing assets
 - admission decision on which benchmark manifests are safe for remote custody
 

@@ -8,12 +8,13 @@ version = "0.1.0"
 description = "Control-pack manifest validation for the cuneiform benchmark lane. Stdlib-only. Does not repair the failed governing gate."
 readme = "code/README.md"
 requires-python = ">=3.8"
-license = { text = "OWNER_DEFERRED" }
+license = { text = "Apache-2.0" }
 authors = [
   { name = "Zer0pa Architects" }
 ]
 keywords = ["cuneiform", "benchmark", "control-pack", "smoke", "manifest-validation"]
 classifiers = [
+  "License :: OSI Approved :: Apache Software License",
   "Development Status :: 3 - Alpha",
   "Intended Audience :: Science/Research",
   "Operating System :: OS Independent",
@@ -21,7 +22,6 @@ classifiers = [
   "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.13",
   "Topic :: Scientific/Engineering",
-  "Private :: Do Not Upload"
 ]
 # Intentionally empty: the smoke runner is stdlib-only by design.
 dependencies = []
