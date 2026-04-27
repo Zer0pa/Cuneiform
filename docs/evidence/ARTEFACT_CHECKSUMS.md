@@ -63,6 +63,20 @@ revision `03ad7397dc12be58289481ff8a209349c6ed9042`).
 | `summary.test_label_count` | `219` | independent count |
 | `summary.overlap_label_count` | `199` | independent count |
 
+## Orchestrator-Added AP Backups (2026-04-27 universal sweep)
+
+Pinned per `Architect-Prime/cuneiform-control-artefacts/backups/2026-04-27/LANE_CHECKSUMS.sha256` (universal-sweep manifest). These are scope-expanding additions made by the orchestrator to ensure mac-loss recovery; they live on AP **private** and are subject to the same `DATA_POLICY` rights classes as the upstream sources they snapshot.
+
+| ID | SHA-256 | Bytes | AP path | Rights class (per upstream `DATA_POLICY`) |
+|---|---|---|---|---|
+| `B-01` | `755111713993c4f4c43b70c52eda0e5b724be09b0bcf0c436698c7f4415aaa93` | 123,718,392 | `backups/2026-04-27/cuneiform_workspace_artifacts_2026-04-27.tar.zst` | `PUBLISH_WITH_REVIEW` (derived JSON snapshots) |
+| `B-02` | `ff00157a7c2614868c1de9bab499476e4d5b6acc6e23b9c192e11e3044343b34` | 342,757,734 | `backups/2026-04-27/cuneiform_workspace_data_2026-04-27.tar.zst` | `FETCH_EXTERNALLY_OR_INTERNAL_ONLY` (likely image-bearing; AP-private custody only) |
+| `K-01` | `a80680ca53e4bdcd1568c5dea87db389b7000861bcb66872bf708c6495e17af4` | 2,911,103 | `models/tokenizer/soft_attractor_model_v42x.pt` | `INTERNAL_ONLY` (model checkpoint) |
+| `K-02` | `ea385fbdfd122ae56d572aaeee804319f7533f70cdff601e07308636dcd88943` | 2,911,103 | `models/tokenizer/soft_attractor_model_v6_3.pt` | `INTERNAL_ONLY` |
+| `K-03` | `aaaf3d84b5670077fb6f3a585dd447c4d7da6c2814b91fc3a604f5c640d8bae9` | 132,391 | `models/tokenizer/spe_centroids_512_v42x.pt` | `INTERNAL_ONLY` (round-trip verified 2026-04-27) |
+
+`indus_*` entries that also appear in `LANE_CHECKSUMS.sha256` belong to the indus lane and are not in this lane's scope.
+
 ## Forbidden Mutations
 
 - A pinned SHA-256 may not be edited. New evidence requires a new ID.

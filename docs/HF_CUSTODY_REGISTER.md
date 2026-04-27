@@ -53,6 +53,82 @@ Re-run from the shared `<RUNPOD_HOST>` pod using `huggingface_hub 1.11.0`.
 | SHA-256 verify | 6/6 OK against `docs/evidence/ARTEFACT_CHECKSUMS.md` pins |
 | All verified | `true` |
 
+## Verification 5 — 2026-04-27 (post-mirror verify + local-Mac inventory per orchestrator universal circular)
+
+Per `DEDICATED LANE AGENT — POST-MIRROR VERIFICATION & LOCAL CLEANUP 2026-04-27`. Full lane preservation audit under the working assumption that the local Mac may die and become unrecoverable at any moment.
+
+### Lane backup status — COMPLETE
+
+| Surface | Role | Coverage |
+|---|---|---|
+| GitHub `Zer0pa/Cuneiform` | canonical code, docs, schemas, smoke runner, tests, fixtures, pin registers | **all 82 git-tracked files; mac-loss recoverable** |
+| HF `Architect-Prime/cuneiform-control-artefacts` (private) | canonical heavy artefact + checkpoints + workspace tarballs | **519.16 MB across 14 files; mac-loss recoverable** |
+| Local Mac workstream tree | working surface only | 1.4 MB; **0 local-only value-bearing files** confirmed |
+
+### AP repo current inventory (revision `3ed3f0d40585b9afa9366d7748f7d8228de1bf25`)
+
+Total: 519,162,369 bytes (519.16 MB / 0.519 GB), private.
+
+| Bytes | File | Source |
+|---:|---|---|
+| 2,580 | `.gitattributes` | HF default |
+| 9,280,260 | `M-01_annotated_sign_benchmark_manifest.json` | this lane (Phase 02 mirror) |
+| 9,280,260 | `M-02_05_annotated_sign_benchmark_manifest.json` | this lane |
+| 27,684,873 | `M-03_06_annotated_sign_p8_manifest.json` | this lane |
+| 471,305 | `M-04_07_annotated_sign_p8_benchmark.json` | this lane |
+| 1,880 | `M-05_08_annotated_sign_p8_1nn_probe.json` | this lane |
+| 4,466 | `M-06_09_REVIEW_PACK_MANIFEST.json` | this lane |
+| 5,303 | `README.md` | this lane (AP-side card) |
+| 719 | `backups/2026-04-27/LANE_CHECKSUMS.sha256` | **orchestrator universal sweep 2026-04-27** |
+| 123,718,392 | `backups/2026-04-27/cuneiform_workspace_artifacts_2026-04-27.tar.zst` | orchestrator |
+| 342,757,734 | `backups/2026-04-27/cuneiform_workspace_data_2026-04-27.tar.zst` | orchestrator |
+| 2,911,103 | `models/tokenizer/soft_attractor_model_v42x.pt` | orchestrator |
+| 2,911,103 | `models/tokenizer/soft_attractor_model_v6_3.pt` | orchestrator |
+| 132,391 | `models/tokenizer/spe_centroids_512_v42x.pt` | orchestrator |
+
+### Verifications run this session
+
+| Check | Result |
+|---|---|
+| 6/6 lane-pinned manifest SHA-256 (M-01..M-06) at AP rev `3ed3f0d4…` | **OK** (unchanged from V1/V2/V3/V4 pins) |
+| AP-side card present and well-formed | OK (5,303 bytes, 124 lines) |
+| Round-trip SHA-256 on smallest orchestrator-added file (`models/tokenizer/spe_centroids_512_v42x.pt`, 132,391 bytes) against orchestrator's `LANE_CHECKSUMS.sha256` pin (`aaaf3d84…d8bae9`) | **OK** |
+| Local-Mac untracked-file scan (anything not in git, ignoring `.gitignore` patterns) | only `.pytest_cache/` + `code/cuneiform_control.egg-info/` (pip/pytest regenerable scratch); deleted in this session (not value-bearing) |
+| Local-only valuable files NOT yet on AP or GitHub | **none found** |
+| Bucket mirror (orchestrator's universal sweep) | **N/A — cuneiform has no HF bucket on the orchestrator's list** |
+
+### Org-side status (NOT touched this session per orchestrator deletion gate)
+
+`Zer0pa/cuneiform-control-artefacts` (revision `e08e1694…`, private, 0.486 MB total: card + M-04 + M-05 + M-06 + .gitattributes) is left intact. Per the orchestrator universal circular: "do NOT delete org-side buckets or repos. The orchestrator handles that after universal verification." Lane-side preservation (the bytes-of-value mirror to AP) is complete, and the residual Zer0pa-side content is wholly redundant with AP — safe for orchestrator removal at any time.
+
+### Orchestrator's added content (scope-of-record note)
+
+The orchestrator's 2026-04-27 universal sweep added to AP:
+
+- **`backups/2026-04-27/cuneiform_workspace_artifacts_2026-04-27.tar.zst`** (123.7 MB) — full upstream `<MONOREPO>/workspace/artifacts/cuneiform/` snapshot. Superset of M-01..M-06 lane-admit set; preserves prior derivation history.
+- **`backups/2026-04-27/cuneiform_workspace_data_2026-04-27.tar.zst`** (342.8 MB) — full upstream `<MONOREPO>/workspace/data/cuneiform/` snapshot. Likely contains the image-bearing source corpus (`DATA_POLICY` rights class `FETCH_EXTERNALLY_OR_INTERNAL_ONLY`). Storage on AP private is a permitted custody mode for that rights class; **no public exposure**.
+- **`models/tokenizer/{soft_attractor_model_v42x,soft_attractor_model_v6_3,spe_centroids_512_v42x}.pt`** (~5.95 MB total) — Phase 2 tokenizer checkpoints. Previously classified `INTERNAL_ONLY` per `DATA_POLICY`; AP private custody is consistent with that class.
+- **`backups/2026-04-27/LANE_CHECKSUMS.sha256`** (719 bytes) — orchestrator's pinned SHA register for the 2026-04-27 sweep (covers cuneiform + some indus entries; lane scope of those latter pins belongs to indus lane).
+
+These additions **expand the lane's HF custody scope** beyond what `docs/PATH_REWRITE_LEDGER.md` originally admitted (which was the 6 derived manifests only). The expansion is operationally correct under the user's mac-volatility safety directive: it preserves the upstream pod's lane-relevant state into a non-Mac, non-pod canonical location.
+
+### Non-negotiables honoured
+
+- Verification gate: round-trip SHA-256 confirmed in this session before any local action.
+- Org-side deletion gate: respected — Zer0pa side untouched.
+- AP repo private (hard-locked).
+- No public AP repos.
+- No content classified as forbidden or unclassifiable was deleted from anywhere.
+
+### Local Mac deletions this session
+
+| Path | Bytes | Type | Reason |
+|---|---:|---|---|
+| `.pytest_cache/` | trivial | pip/pytest scratch (regenerable) | brief: "Mac is a working surface, not a storage tier" |
+| `code/cuneiform_control.egg-info/` | trivial | `pip install -e .` egg-info (regenerable) | same |
+
+No git-tracked file deleted. No bytes-of-value deleted.
+
 ## Verification 4 — 2026-04-26 (HF storage split per GNOSIS_HF_STORAGE_EXECUTION_BRIEF_2026-04-26)
 
 Per `GNOSIS_HF_STORAGE_EXECUTION_BRIEF_2026-04-26.md` §1.2 (storage

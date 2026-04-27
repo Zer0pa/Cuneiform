@@ -46,7 +46,8 @@ mechanically checkable from a fresh checkout.
 | Hermetic self-test | `pytest -q` → **3 passed** in 0.04s | `tests/test_smoke_runner.py` |
 | Real-manifest smoke (pod, scrubbed label) | verdict `PASS`, observed SHA matches pinned `e4d85a…3daa24`, 5/5 invariants OK, 0 schema errors | `artefacts/smoke/manifest_validation_report.json` |
 | HF post-upload SHA verify | 6/6 OK against pinned values | `artefacts/smoke/hf_upload_verify.json` |
-| HF custody (token-verified, 2026-04-24) | repo private; revision `c64e22f6…`; 6/6 SHA verified | `docs/HF_CUSTODY_REGISTER.md` |
+| HF custody (token-verified, latest 2026-04-27) | canonical heavy store on `Architect-Prime/cuneiform-control-artefacts` (private, rev `3ed3f0d4…`, 519 MB total: 6 manifests + orchestrator-added workspace tarballs + tokenizer checkpoints); 6/6 lane SHA + 1 round-trip orchestrator-added SHA verified | `docs/HF_CUSTODY_REGISTER.md` Verification 5 |
+| Local Mac inventory (2026-04-27) | 1.4 MB tree; 82 git-tracked + 0 local-only value-bearing files; lane is mac-loss recoverable | `docs/HF_CUSTODY_REGISTER.md` Verification 5 |
 | Operational-leak scan | 0 hits for forbidden operational patterns (concrete RunPod IPs, raw SSH endpoints, local home paths, retired monorepo paths, pod IDs) | `Operational-leak scan` step in `.github/workflows/ci.yml` |
 | GitHub Actions | minimal private-repo CI on `main` (this commit) | `.github/workflows/ci.yml` |
 

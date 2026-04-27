@@ -21,6 +21,19 @@
 > reduced to lightweight discovery surface (card + M-04..M-06, total
 > 0.486 MB). All 6 SHA-256 pins re-verified at the new revisions on both
 > sides; scientific provenance and metric values **unchanged**.
+>
+> **Post-mirror verification addendum (2026-04-27):** orchestrator's
+> universal-sweep circular received and executed for cuneiform. AP repo
+> now also holds the orchestrator-added upstream workspace tarballs
+> (`backups/2026-04-27/cuneiform_workspace_{artifacts,data}_2026-04-27.tar.zst`)
+> and tokenizer checkpoints (`models/tokenizer/*.pt`); see
+> `docs/HF_CUSTODY_REGISTER.md` Verification 5 for the full inventory and
+> `docs/evidence/ARTEFACT_CHECKSUMS.md` for the orchestrator's pinned
+> SHA-256s. Round-trip SHA verify on `spe_centroids_512_v42x.pt` confirmed
+> OK in this session. Local-Mac untracked-file scan: zero bytes-of-value
+> outside git/AP custody. Lane is fully mac-loss-recoverable. Zer0pa
+> org-side repo NOT deleted — orchestrator's universal-deletion gate
+> respected.
 
 ## TL;DR
 
