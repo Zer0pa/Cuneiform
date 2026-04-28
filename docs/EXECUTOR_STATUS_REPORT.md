@@ -183,3 +183,27 @@ artefact path. If nothing like that turns up, the lane should sit in
 gate-repair event.
 
 — autonomous executor, 2026-04-24
+
+---
+
+## Public-Refresh Wave Addendum — 2026-04-28
+
+Gnosis public-refresh wave executed (Gnosis-Cuneiform Refresh Agent, 2026-04-28).
+Scientific provenance, SHA-256 pins, governing verdicts, and HF anchors are
+**unchanged**. Changes made:
+
+- Live-window banner added to README (Zer0pa lab ethos: useful now, improving
+  continuously).
+- `## Commercial Readiness` section added (Verdict: `STAGED`, Posture:
+  `negative_control_preservation`).
+- `## Upcoming Workstreams` section added with 4-category taxonomy.
+- Headline-first metric and honest-blocker line added to `## What This Is`.
+- Minimum derivative-doc set completed: CHANGELOG.md, CITATION.cff,
+  CODE_OF_CONDUCT.md added.
+- `Private :: Do Not Upload` classifier added to `pyproject.toml`.
+- Agent-orchestration scaffolding relocated from repo root to `_internal/`.
+- GitHub topics filled (11 topics).
+- Repo description updated to public-truth single-line.
+- `Traditional-Knowledge Acknowledgment` section preserved verbatim.
+- All HF anchors preserved.
+- Name-redaction grep: 0 hits; drift sweep: clean.
