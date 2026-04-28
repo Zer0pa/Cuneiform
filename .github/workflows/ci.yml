@@ -105,10 +105,10 @@ jobs:
 
       - name: Require Ops-Gates read token
         env:
-          OPS_GATES_READ_TOKEN: ${{ secrets.OPS_GATES_READ_TOKEN }}
+          OPS_GATES_READ_TOKEN: ${{ secrets.OPS_GATES_READ_TOKEN || secrets.GNOSIS_OPS_GATES_READ_TOKEN }}
         run: |
           if [ -z "${OPS_GATES_READ_TOKEN:-}" ]; then
-            echo "::error::OPS_GATES_READ_TOKEN is required to consume the internal Gnosis-Ops-Gates gate bundle."
+            echo "::error::OPS_GATES_READ_TOKEN or GNOSIS_OPS_GATES_READ_TOKEN is required to consume the internal Gnosis-Ops-Gates gate bundle."
             exit 1
           fi
 
@@ -118,7 +118,7 @@ jobs:
           repository: Zer0pa/Gnosis-Ops-Gates
           ref: 54ed0a7130641026bbb6574af162862c4fcb4c3b
           path: _ops_gates
-          token: ${{ secrets.OPS_GATES_READ_TOKEN }}
+          token: ${{ secrets.OPS_GATES_READ_TOKEN || secrets.GNOSIS_OPS_GATES_READ_TOKEN }}
           fetch-depth: 1
           persist-credentials: false
 
