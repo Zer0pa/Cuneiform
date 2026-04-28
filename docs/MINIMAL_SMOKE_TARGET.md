@@ -1,8 +1,10 @@
 # Minimal Smoke Target — Phase 01 Freeze
 
 > **Phase 01 artifact.** Names the single smallest repo-local check that will
-> prove the cuneiform-control rerun contract is not narrative-only. This file
-> chooses the target; **it does not run it**. Execution is Phase 02.
+> prove the cuneiform-control rerun contract is not narrative-only. Phase 02
+> has now executed this target; current reports live at
+> `artefacts/smoke/manifest_validation_report.json` and
+> `artefacts/smoke/hf_upload_verify.json`.
 
 ## Freeze metadata
 
@@ -10,7 +12,7 @@
 |---|---|
 | Frozen on | 2026-04-24 |
 | Phase | 01 Plan 01 |
-| Status | `ADMITTED_PENDING_PHASE_02_EXECUTION` |
+| Status | `EXECUTED_PHASE_02_PASS` |
 | Governing verdict (unchanged) | `NO_GO_GOVERNING_GATE_UNMET` |
 
 ## Candidates Considered
@@ -35,8 +37,8 @@ Phase 2 close.
 
 | Input | Custody | How obtained in Phase 02 |
 |---|---|---|
-| `annotated_sign_benchmark_manifest.json` | `PUBLISH_WITH_REVIEW` per `DATA_POLICY.md` | Fetched from HF dataset `Zer0pa/cuneiform-control-artefacts` with checksum pin recorded in `docs/evidence/ARTEFACT_CHECKSUMS.md` (to be created in Phase 02) |
-| JSON schema | in-tree | `code/cuneiform_control/schemas/benchmark_manifest.schema.json` (to be authored in Phase 02) |
+| `annotated_sign_benchmark_manifest.json` | `PUBLISH_WITH_REVIEW` per `DATA_POLICY.md` | Held in private HF custody; checksum pin recorded in `docs/evidence/ARTEFACT_CHECKSUMS.md` |
+| JSON schema | in-tree | `code/cuneiform_control/schemas/benchmark_manifest.schema.json` |
 | Expected label/sign class count | from `docs/evidence/CUNEIFORM_PHASE2_GATE_STATUS.md` | static expectation record |
 
 ### Pass Condition (what counts as smoke-passing, and what it does NOT mean)
@@ -87,7 +89,7 @@ Any of the above still require fresh scientific evidence, not a smoke success.
 4. It exposes the `CUNEIFORM_SPECIFIC` vs `SHARED_METHOD` boundary (only a
    tiny manifest-validation module is admitted) before any heavier extraction.
 
-## Phase 02 Preconditions (not this phase's work)
+## Phase 02 Preconditions (satisfied 2026-04-24)
 
 - HF dataset `Zer0pa/cuneiform-control-artefacts` created and populated.
 - `docs/evidence/ARTEFACT_CHECKSUMS.md` authored with SHA-256s.

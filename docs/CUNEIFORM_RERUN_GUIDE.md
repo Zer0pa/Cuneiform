@@ -41,8 +41,17 @@ shipped JSON schema. A PASS does **not** repair
 | `M-06` | `09_REVIEW_PACK_MANIFEST.json` | `7163ea…4aa9` |
 | `S-01..S-05` | cuneiform-specific scripts | see ledger |
 
-HF custody: `Zer0pa/cuneiform-control-artefacts` revision
-`c64e22f671dcce1577233309fd3320258dbd2e09` (private).
+HF custody:
+
+- canonical heavy/private store:
+  `Architect-Prime/cuneiform-control-artefacts` revision
+  `3ed3f0d40585b9afa9366d7748f7d8228de1bf25`;
+- lightweight private discovery surface:
+  `Zer0pa/cuneiform-control-artefacts` revision
+  `e08e1694c337a8298d92c058b416053b04f239f6` for M-04..M-06.
+
+See `docs/HF_CUSTODY_REGISTER.md` Verification 5 before fetching any private
+artefact. This rerun guide never authorizes public dataset visibility.
 
 ## What A Future Minimal Rerun (in a different lane) Must Preserve
 

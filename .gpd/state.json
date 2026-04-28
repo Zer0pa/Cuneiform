@@ -1,6 +1,6 @@
 {
   "_version": 1,
-  "_synced_at": "2026-04-24T02:00:00+02:00",
+  "_synced_at": "2026-04-28T00:00:00+02:00",
   "workstream": "gnosis-cuneiform",
   "authority_metric": "control_truth_preserved",
   "governing_source_verdict": "NO_GO_GOVERNING_GATE_UNMET",
@@ -44,7 +44,8 @@
         "artefacts/smoke/hf_upload_verify.json"
       ],
       "smoke_verdict": "PASS",
-      "hf_dataset_revision": "c64e22f671dcce1577233309fd3320258dbd2e09",
+      "initial_hf_dataset_revision": "c64e22f671dcce1577233309fd3320258dbd2e09",
+      "hf_custody_superseded_by": "Architect-Prime/cuneiform-control-artefacts@3ed3f0d40585b9afa9366d7748f7d8228de1bf25",
       "governing_gate_delta": "unchanged"
     },
     {
@@ -64,19 +65,24 @@
     }
   ],
   "blockers": [
-    "public promotion blocked by failed governing gate",
+    "product/scientific-success promotion blocked by failed governing gate",
     "raw image and corpus redistribution blocked by unresolved rights",
-    "licence text OWNER_DEFERRED; remote tag push and public release forbidden"
+    "public HF visibility or corpus redistribution blocked by unresolved data-rights rulings"
   ],
-  "next_actions": [],
+  "next_actions": [
+    "repo orchestrator review of Ops-Gates/front-door coherence branch",
+    "confirm OPS_GATES_READ_TOKEN is present for CI sibling-repo checkout"
+  ],
   "remote": {
     "github": "https://github.com/Zer0pa/Cuneiform",
     "visibility": "INTERNAL",
     "default_branch": "main",
     "huggingface": {
-      "dataset": "Zer0pa/cuneiform-control-artefacts",
+      "dataset": "Architect-Prime/cuneiform-control-artefacts",
       "visibility": "private",
-      "revision": "c64e22f671dcce1577233309fd3320258dbd2e09"
+      "revision": "3ed3f0d40585b9afa9366d7748f7d8228de1bf25",
+      "lightweight_dataset": "Zer0pa/cuneiform-control-artefacts",
+      "lightweight_revision": "e08e1694c337a8298d92c058b416053b04f239f6"
     }
   }
 }

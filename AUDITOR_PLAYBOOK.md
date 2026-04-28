@@ -1,5 +1,8 @@
 # Auditor Playbook
 
+Last reviewed: 2026-04-28 against the post-license, post-Ops-Gates adoption
+candidate branch. The governing no-go result is unchanged.
+
 ## Goal
 
 Verify what this control pack currently proves without reading the full doc
@@ -17,7 +20,9 @@ surface.
    `schema_errors: []`, all 5 invariants `ok: true`.
 6. Open `artefacts/smoke/hf_upload_verify.json` — confirm
    `all_verified: true` and `private: true`.
-7. Read `PUBLIC_AUDIT_LIMITS.md` before making any portfolio-level claim.
+7. Confirm CI includes both the repo-local operational leak scan and the
+   Ops-Gates `coupling_audit.py` job pinned at `54ed0a7`.
+8. Read `PUBLIC_AUDIT_LIMITS.md` before making any portfolio-level claim.
 
 ## Replay The Smoke Locally (≤ 60 seconds)
 
@@ -45,8 +50,9 @@ governing gate has been repaired.
 | The inherited governing gate failed and remains failed | `docs/evidence/CUNEIFORM_PHASE2_GATE_STATUS.md`, smoke report `governing_verdict` field | `YES` | Smoke cannot move this gate by construction. |
 | Source families and data boundaries are explicit | `SOURCE_BOUNDARY.md`, `DATA_POLICY.md`, `docs/PATH_REWRITE_LEDGER.md` | `YES` | One ghost entry (`S-06`) retired during Phase 02 audit. |
 | Manifest custody is pinned and verifiable | `docs/evidence/ARTEFACT_CHECKSUMS.md`, `artefacts/smoke/manifest_validation_report.json` | `YES` | Pins were verified on a known-good upstream pod 2026-04-24. |
-| HF custody exists and matches the pins | `artefacts/smoke/hf_upload_verify.json`, HF revision `c64e22f6…` | `INTERNAL_ONLY` | Dataset is `private`; only Zer0pa-org accounts can fetch. |
+| HF custody exists and matches the pins | `docs/HF_CUSTODY_REGISTER.md` Verification 5; AP revision `3ed3f0d4…`; lightweight Zer0pa surface `e08e1694…` | `INTERNAL_ONLY` | Datasets are `private`; only authorized accounts can fetch. |
 | A bounded, stdlib-only smoke runner exists | `code/cuneiform_control/smoke/run_manifest_validation.py`, `tests/test_smoke_runner.py` | `YES` | No third-party deps, no pixel handling, no rerun of failing probe. |
+| Ops-Gates is load-bearing for operational hygiene | `.github/workflows/ci.yml`; `Gnosis-Ops-Gates` `coupling_audit.py` pinned at `54ed0a7` | `YES` if CI secret is present | This is an ops hygiene gate only; it cannot move the science gate. |
 
 ## Minimum Replay Steps
 
@@ -56,7 +62,9 @@ governing gate has been repaired.
 3. Run the bundled fixture self-test (`python -m unittest tests.test_smoke_runner`).
 4. Check that `SOURCE_BOUNDARY.md` + `PATH_REWRITE_LEDGER.md` together exclude
    the generic-methods code that belongs elsewhere.
-5. Record any missing artefact or uncited upgrade as `UNKNOWN` or
+5. Run `python3 ../Gnosis-Ops-Gates/code/tools/coupling_audit.py code tests`
+   from a sibling checkout if reviewing locally.
+6. Record any missing artefact or uncited upgrade as `UNKNOWN` or
    `UNVERIFIED`, not as closure.
 
 ## If You Find A Problem

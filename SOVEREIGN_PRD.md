@@ -43,7 +43,8 @@ lead scientific thesis, or public-ready repo.
 
 - repairing the inherited scientific gate
 - generic methods ownership claims
-- public promotion, commercialization, or flagship positioning
+- product/scientific-success promotion, commercialization, or flagship
+  positioning
 - bundling heavy corpora or rights-constrained image assets into this scaffold
 
 ## Required Deliverables
@@ -52,24 +53,26 @@ lead scientific thesis, or public-ready repo.
 - `SOVEREIGN_PRD.md`
 - `SOURCE_BOUNDARY.md`
 - `DATA_POLICY.md`
-- `MIGRATION_PLAN.md`
-- `TODO.md`
+- `_internal/MIGRATION_PLAN.md`
+- `_internal/TODO.md`
 - `docs/evidence/CUNEIFORM_PHASE2_GATE_STATUS.md`
 - `.gpd/` truth surfaces
 
 ## Source Families To Preserve
 
 - `scripts/cuneiform/annotated_sign_benchmark_common.py`
-- `scripts/cuneiform/revert_phase2_common.py`
 - `scripts/cuneiform/benchmark_annotated_sign_tokenizer.py`
 - `scripts/cuneiform/probe_annotated_sign_tokenizer_1nn.py`
+- `scripts/cuneiform/benchmark_annotated_sign_p8.py`
+- `scripts/cuneiform/probe_annotated_sign_p8_1nn.py`
 - `workspace/artifacts/cuneiform/`
 - `workspace/share/science_engineering_review_2026-04-10/`
 
 ## Blocking Risks
 
 - failed scientific gate still blocks sovereign promotion
-- no extracted installable rerun surface yet
+- no extracted full scientific rerun surface yet; the existing installable
+  package is manifest-smoke only
 - image-bearing data and upstream fetch surfaces remain constrained
 - some generic helper logic belongs in other workstreams and must not be copied
   into this lane without an explicit temporary bridge
@@ -79,4 +82,3 @@ lead scientific thesis, or public-ready repo.
 This pack is done only when a fresh reader can see, from files inside this
 scaffold alone, that the lane is real, useful as control material, still failed
 at the governing gate, and not allowed to masquerade as something stronger.
-

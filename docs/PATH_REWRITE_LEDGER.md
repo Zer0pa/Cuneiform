@@ -4,6 +4,11 @@
 > mapping for the first rerun slice. This ledger is append-only once frozen. It
 > does not authorize extraction, publication, or a rerun — it only records the
 > boundary so a fresh agent can see exactly what belongs where.
+>
+> **Current-state note (2026-04-28):** Phase 02/03 executed the manifest-smoke
+> slice and private HF custody. Treat "deferred to Phase 02" wording below as
+> historical sequencing, not current absence. Current custody is recorded in
+> `docs/HF_CUSTODY_REGISTER.md` and `docs/evidence/ARTEFACT_CHECKSUMS.md`.
 
 ## Freeze metadata
 

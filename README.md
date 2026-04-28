@@ -1,10 +1,10 @@
 # Gnosis Cuneiform
 
 > This is a live window into the Zer0pa lab. None of the work in this repo is
-> a final release. Zer0pa GitHub repos are open as a matter of course for
-> visibility and community participation. Always-in-beta is the posture: useful
-> now, improving continuously. Open gates and honest blockers are surfaced in
-> plain text below — see `## What We Don't Claim` and `## Upcoming Workstreams`.
+> a product release, decipherment claim, or scientific success claim. This lane
+> is useful as a negative-control/control-pack surface because the failed gate
+> is preserved rather than hidden. Always read the smoke `PASS` together with
+> the sovereign blocker: `NO_GO_GOVERNING_GATE_UNMET`.
 
 ## Licensing
 
@@ -57,7 +57,9 @@ mechanically checkable from a fresh checkout.
 invariants hold on real-manifest smoke (`artefacts/smoke/manifest_validation_report.json`);
 6/6 SHA-256 pinned upstream manifest custody verified against
 `Architect-Prime/cuneiform-control-artefacts` (token-verified 2026-04-27,
-`docs/HF_CUSTODY_REGISTER.md` Verification 5).
+`docs/HF_CUSTODY_REGISTER.md` Verification 5). CI also consumes the internal
+`gnosis-ops-gates` coupling audit so operational-leak hygiene is checked by
+the portfolio gate bundle, not only by repo-local prose.
 
 **Honest blocker:** The inherited governing gate `NO_GO_GOVERNING_GATE_UNMET`
 failed at `governing_1nn_accuracy = 0.021916` and remains failed. This lane
@@ -101,7 +103,8 @@ out of scope for this lane (see `## Upcoming Workstreams`).
 | HF custody (token-verified, latest 2026-04-27) | canonical heavy store on `Architect-Prime/cuneiform-control-artefacts` (private, rev `3ed3f0d4…`, 519 MB total: 6 manifests + orchestrator-added workspace tarballs + tokenizer checkpoints); 6/6 lane SHA + 1 round-trip orchestrator-added SHA verified | `docs/HF_CUSTODY_REGISTER.md` Verification 5 |
 | Local Mac inventory (2026-04-27) | 1.4 MB tree; 82 git-tracked + 0 local-only value-bearing files; lane is mac-loss recoverable | `docs/HF_CUSTODY_REGISTER.md` Verification 5 |
 | Operational-leak scan | 0 hits for forbidden operational patterns (concrete RunPod IPs, raw SSH endpoints, local home paths, retired monorepo paths, pod IDs) | `Operational-leak scan` step in `.github/workflows/ci.yml` |
-| GitHub Actions | minimal private-repo CI on `main` (this commit) | `.github/workflows/ci.yml` |
+| Ops-Gates coupling audit | internal `Gnosis-Ops-Gates` `coupling_audit.py` pinned at `54ed0a7`; scans `code tests` without fetching HF/private artefacts | `.github/workflows/ci.yml` |
+| GitHub Actions | minimal repo CI on `main` (this commit) | `.github/workflows/ci.yml` |
 
 ## Commercial Readiness
 
@@ -110,9 +113,10 @@ out of scope for this lane (see `## Upcoming Workstreams`).
 | **Verdict** | `STAGED` |
 | **Posture** | `negative_control_preservation` |
 
-This lane is public as a lab window, not as a product release. The negative
-result (`NO_GO_GOVERNING_GATE_UNMET`) is a first-class scientific output.
-Commercial readiness in the traditional sense is not the goal of this lane.
+This lane is website-syncable only as a negative-control/control-pack surface,
+not as a product release or proof of cuneiform recovery. The negative result
+(`NO_GO_GOVERNING_GATE_UNMET`) is a first-class scientific output. Commercial
+readiness in the traditional sense is not the goal of this lane.
 
 ## Proof Anchors
 
@@ -148,7 +152,7 @@ Commercial readiness in the traditional sense is not the goal of this lane.
 | `docs/evidence/` | Failed-gate evidence, control results, SHA-256 pin register. |
 | `docs/migration/` | Original migration-package brief, authority, source inventory, handover (preserved as transfer history). |
 | `.gpd/` | GPD phase pack: project, requirements, roadmap, state, four closed phases (00–03). |
-| `.github/workflows/ci.yml` | Minimal private-repo CI: install + pytest + smoke help. |
+| `.github/workflows/ci.yml` | Minimal repo CI: install + pytest + smoke help + Ops-Gates coupling audit + operational-leak scan. |
 | `_internal/` | Agent-orchestration scaffolding (AUTONOMOUS_EXECUTION_POLICY, GPD_BOOTSTRAP_GUIDE, STARTUP_PROMPT, TEMPLATE_USAGE, WORKSTREAM_GPD_INIT_CHECKLIST, MIGRATION_PLAN, TODO). Not reader-facing. |
 
 ## Quick Start

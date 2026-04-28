@@ -10,8 +10,8 @@
       unchanged.)
 - [x] **Phase 02: Minimal Rerun Or Manifest Smoke** - Execute the smallest
       repo-local check that proves the rerun contract is not narrative-only.
-      (Closed 2026-04-24; smoke verdict `PASS`; HF custody at revision
-      `c64e22f671dcce1577233309fd3320258dbd2e09`; governing verdict unchanged.)
+      (Closed 2026-04-24; smoke verdict `PASS`; HF custody later split to AP
+      canonical private storage; governing verdict unchanged.)
 - [x] **Phase 03: Control-Pack Handover** - Package only control-pack truth and
       keep public promotion blocked unless the failed gate changes on evidence.
       (Closed 2026-04-24; pyproject.toml ships, self-test 3/3 pass on host,
@@ -23,6 +23,10 @@ PRD complete (Phases 00–03 closed 2026-04-24). The lane is held in
 `HOLD_CONTROL_ONLY` posture. The next gate is **external**: a separate
 workstream must repair `NO_GO_GOVERNING_GATE_UNMET` on new scientific
 evidence before any new milestone opens here.
+
+Operational coherence note (2026-04-28): CI now stages an Ops-Gates
+`coupling_audit.py` consumer pinned at `54ed0a7`. That gate checks operational
+leak hygiene only; it is not a scientific gate and cannot repair P5.
 
 ## Stop Conditions
 

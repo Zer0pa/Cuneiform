@@ -5,17 +5,18 @@
 This file explains where technical truth lives in the repo. It is an index of
 components, authority artefacts, and boundaries — not a marketing deck.
 
-## System Snapshot (2026-04-24, post-Phase-03)
+## System Snapshot (2026-04-28, post-license and Ops-Gates adoption wave)
 
 | Layer | What Lives Here | Source Of Truth |
 |---|---|---|
-| Public docs | Front-door control-pack posture, governance, handover | `README.md`, `SOVEREIGN_PRD.md`, `MIGRATION_PLAN.md`, `SOURCE_BOUNDARY.md`, `DATA_POLICY.md`, `TODO.md`, `06_handover/README.md` |
+| Public docs | Front-door control-pack posture, governance, handover | `README.md`, `SOVEREIGN_PRD.md`, `_internal/MIGRATION_PLAN.md`, `SOURCE_BOUNDARY.md`, `DATA_POLICY.md`, `_internal/TODO.md`, `docs/migration/06_handover/README.md` |
 | Code package | Minimal extracted surface for manifest validation; stdlib-only | `code/cuneiform_control/__init__.py`, `code/cuneiform_control/schemas/benchmark_manifest.schema.json`, `code/cuneiform_control/smoke/run_manifest_validation.py`, `pyproject.toml` |
 | Smoke evidence | Deterministic JSON reports from `SMOKE-01-MANIFEST-VALIDATION` | `artefacts/smoke/manifest_validation_report.json`, `artefacts/smoke/hf_upload_verify.json` |
 | Pinned custody | SHA-256 pins for 6 manifests + 5 source scripts; one `UPSTREAM_NOT_PRESENT` entry | `docs/evidence/ARTEFACT_CHECKSUMS.md` |
 | Path-rewrite ledger | Frozen source-to-destination mapping with admit/exclude rules | `docs/PATH_REWRITE_LEDGER.md`, `docs/MINIMAL_SMOKE_TARGET.md`, `docs/HF_DATASET_PLAN.md` |
 | Failed-gate evidence | Phase 2 status + control results + benchmark-pack contract | `docs/evidence/CUNEIFORM_PHASE2_GATE_STATUS.md`, `docs/evidence/CUNEIFORM_CONTROL_RESULTS.md`, `docs/family/CUNEIFORM_BENCHMARK_PACK_CONTRACT.md` |
-| Remote artefact custody | HF dataset (private) for the 6 manifests | `Zer0pa/cuneiform-control-artefacts` revision `c64e22f671dcce1577233309fd3320258dbd2e09` |
+| Remote artefact custody | HF private custody for manifests, workspace backups, and checkpoints | `Architect-Prime/cuneiform-control-artefacts` revision `3ed3f0d40585b9afa9366d7748f7d8228de1bf25`; `Zer0pa/cuneiform-control-artefacts` remains a private lightweight discovery surface for M-04..M-06 |
+| Operational hygiene gate | Ops-Gates coupling audit over Python surfaces | `.github/workflows/ci.yml` consumes `Gnosis-Ops-Gates` `coupling_audit.py` pinned at `54ed0a7` |
 | Owner-held / private | Full upstream corpora, image-bearing assets, monorepo helper imports | See `DATA_POLICY.md` and `SOURCE_BOUNDARY.md` |
 
 ## Component Map
@@ -50,7 +51,7 @@ components, authority artefacts, and boundaries — not a marketing deck.
 - `code/README.md` documents the smoke surface.
 - `pyproject.toml` is the minimum extracted package contract.
 - `docs/LEGAL_BOUNDARIES.md` summarizes legal constraints but does not replace
-  the licence (still `OWNER_DEFERRED`).
+  `LICENSE`, `NOTICE`, `TRADEMARKS.md`, or `DATA_POLICY.md`.
 
 ## Known Gaps Closed in Phase 02–03
 
@@ -65,6 +66,9 @@ components, authority artefacts, and boundaries — not a marketing deck.
 
 - The failed governing gate is unrepaired (and not in this lane's scope).
 - Image-bearing data and some upstream fetch surfaces remain rights-limited.
-- Licence text is `OWNER_DEFERRED`.
+- Derived manifests, model checkpoints, and private HF artefacts remain governed
+  by `DATA_POLICY.md`; code/docs licensing does not publish those bytes.
 - `revert_phase2_common.py` was inherited as a reference but is
   `UPSTREAM_NOT_PRESENT` on the pod; recorded as `S-06`, not blocking.
+- `check_repo_truth` from Ops-Gates is not adopted yet; Ops-Gates lacks a
+  Cuneiform/control-pack profile, so using it now would require fake paths.

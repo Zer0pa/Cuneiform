@@ -7,6 +7,22 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- CI now stages a load-bearing `Gnosis-Ops-Gates` consumer:
+  `coupling_audit.py` pinned at `54ed0a7` scans Cuneiform Python surfaces
+  without fetching HF/private artefacts or computing science metrics.
+
+### Changed
+
+- Front-door and auditor surfaces now bind smoke `PASS`, Ops-Gates hygiene,
+  and `STAGED` posture back to the sovereign no-go result so website sync
+  cannot truthfully present this lane as cuneiform recovery.
+- HF custody references updated toward the current AP canonical/private store
+  plus Zer0pa lightweight split.
+- Stale `OWNER_DEFERRED` licence wording narrowed to data/HF artefact
+  redistribution boundaries; code/docs licensing remains Apache-2.0/CC-BY-4.0.
+
 ## [0.1.0-refresh] — 2026-04-28
 
 ### Added

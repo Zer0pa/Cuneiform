@@ -8,6 +8,8 @@ name: ci
 #   * pytest -q (3 hermetic self-tests)
 #   * cuneiform-smoke --help (entry-point sanity)
 #   * leak-pattern scan over tracked files
+#   * separate Gnosis Ops-Gates coupling-audit job, pinned to an internal
+#     infrastructure commit
 # It does NOT fetch private HF artefacts, hit external APIs, or run the
 # real-manifest smoke (that requires a locally-held pinned manifest copy).
 
@@ -89,3 +91,36 @@ jobs:
             exit 1
           fi
           echo "Working tree clean."
+
+  ops-gates-coupling-audit:
+    name: ops-gates coupling audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout Cuneiform
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Require Ops-Gates read token
+        env:
+          OPS_GATES_READ_TOKEN: ${{ secrets.OPS_GATES_READ_TOKEN }}
+        run: |
+          if [ -z "${OPS_GATES_READ_TOKEN:-}" ]; then
+            echo "::error::OPS_GATES_READ_TOKEN is required to consume the internal Gnosis-Ops-Gates gate bundle."
+            exit 1
+          fi
+
+      - name: Checkout Gnosis-Ops-Gates tooling
+        uses: actions/checkout@v4
+        with:
+          repository: Zer0pa/Gnosis-Ops-Gates
+          ref: 54ed0a7130641026bbb6574af162862c4fcb4c3b
+          path: _ops_gates
+          token: ${{ secrets.OPS_GATES_READ_TOKEN }}
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Ops-Gates operational coupling audit
+        run: python3 _ops_gates/code/tools/coupling_audit.py code tests

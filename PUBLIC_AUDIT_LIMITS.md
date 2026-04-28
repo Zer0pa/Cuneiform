@@ -25,7 +25,7 @@ cuneiform result or a public-ready standalone repo.
 | Repaired governing gate | No artefact in this lane proves the failed metric has improved. The smoke is custody-only by construction. |
 | HF artefact contents | The HF dataset is `private`. A non-Zer0pa account sees only the SHA-256 pins, not the bytes. |
 | Full upstream cuneiform corpora and image-bearing assets | Some sources remain fetch-only or rights-constrained. |
-| Final licence identity | `OWNER_DEFERRED`; reuse beyond Zer0pa internal custody is not authorized. |
+| Dataset and corpus redistribution | Apache-2.0 for code and CC-BY-4.0 for docs do not license private HF artefacts, derived manifests, model checkpoints, or rights-constrained source corpora. |
 | Future gate-repair evidence | No document here proves that the failed governing metric will be repaired. |
 
 ## Rules For Interpreting This Repo
@@ -34,8 +34,11 @@ cuneiform result or a public-ready standalone repo.
 - Do not turn roadmap intent into proof.
 - Do not use portfolio-level language unless this repo evidences it directly.
 - Treat `UNKNOWN`, `UNVERIFIED`, `INFERRED`, `UPSTREAM_NOT_PRESENT`, and
-  `OWNER_DEFERRED` as real states, not as placeholders to gloss over.
+  data-specific owner-deferred rulings as real states, not as placeholders to
+  gloss over.
 - A smoke `PASS` is a custody claim, not a science claim.
+- An Ops-Gates audit `PASS` is an operational-hygiene claim, not a science
+  claim.
 
 ## Disputes
 

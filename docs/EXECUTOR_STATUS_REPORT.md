@@ -34,6 +34,14 @@
 > outside git/AP custody. Lane is fully mac-loss-recoverable. Zer0pa
 > org-side repo NOT deleted — orchestrator's universal-deletion gate
 > respected.
+>
+> **Repo-orchestrator readiness addendum (2026-04-28):** licence files now
+> state Apache-2.0 for code and CC-BY-4.0 for docs while keeping data,
+> manifests, HF artefacts, model checkpoints, and image-bearing sources outside
+> the code/docs licence grant. CI now stages a load-bearing Ops-Gates consumer:
+> `Gnosis-Ops-Gates` `coupling_audit.py` pinned at `54ed0a7` scans `code tests`
+> without fetching HF artefacts or computing any science metric. This is an
+> operational hygiene gate only; `NO_GO_GOVERNING_GATE_UNMET` remains sovereign.
 
 ## TL;DR
 
@@ -45,10 +53,13 @@
   on-disk JSON report with the governing-verdict field pinned alongside.
 - HF dataset `<HF_ORG>/cuneiform-control-artefacts` (private) populated with
   the 6 admitted manifests; post-upload SHA-256s verified against the pins.
-  Token-verified register in `docs/HF_CUSTODY_REGISTER.md`.
+  Token-verified register in `docs/HF_CUSTODY_REGISTER.md`; current canonical
+  heavy/private store is `Architect-Prime/cuneiform-control-artefacts` revision
+  `3ed3f0d4…`.
 - Local `v0.1.0-internal` git tag exists; **not** pushed to remote.
-- Git repo is `INTERNAL` visibility; HF dataset is `private`. Public surface
-  is still zero.
+- Git repo is `INTERNAL` visibility; HF datasets are `private`. Any website
+  sync must present this as a negative-control/control-pack lane, not a
+  release-ready or decipherment-success lane.
 
 ## Access Prerequisites For Reviewers
 
@@ -57,7 +68,7 @@ To perform a full review you need **all three**:
 | Surface | Access required | What it gives you |
 |---|---|---|
 | GitHub `Zer0pa/Cuneiform` | Zer0pa GitHub-org membership (repo is `INTERNAL`) | All code, docs, pins, smoke reports, phase summaries, this file |
-| HF `<HF_ORG>/cuneiform-control-artefacts` | Zer0pa HF-org membership (dataset is `private`) | The 6 actual manifest JSONs (M-01..M-06); needed only if you want to **re-run** the smoke |
+| HF `Architect-Prime/cuneiform-control-artefacts` | Authorized HF access (dataset is `private`) | The 6 actual manifest JSONs plus orchestrator-added backups/checkpoints; needed only if you want to **re-run** the smoke |
 | Upstream monorepo (shared `<RUNPOD_HOST>` pod under `<MONOREPO>/`) | SSH key on the shared pod | Independent second-source for SHA-256 spot-checks |
 
 A reviewer without HF access can still read every pin, report, and decision
@@ -122,7 +133,7 @@ The smoke is custody-only by construction. It cannot move the gate.
 | `revert_phase2_common.py` | `SOURCE_BOUNDARY.md` inherited this filename, and I could not find it on the upstream pod. I recorded `UPSTREAM_NOT_PRESENT` rather than inventing a path. | Ledger amended; decision retired; `PATH_REWRITE_LEDGER.md` decision log carries the dated retirement note. | If you know this file lives under a different name (or in a different repo), open an evidence dispute so I can re-pin correctly. |
 | `corrected_structural_benchmark.py` | Also inherited from `SOURCE_BOUNDARY.md`; I could not verify its presence on the pod in the time budget I gave myself. I replaced it with the verified `probe_annotated_sign_p8_1nn.py`. | Replacement justified and logged. | If the original filename is canonical for the P7 diagnostic, push back — I'll re-audit. |
 | Path drift in `UNIVERSAL_STARTUP_PROMPT.md` | The template shipped hard-coded to a local absolute path; I rewrote it to the workstream root relative to a fresh checkout of the repo. The closeout pass removed the remaining local-path leakage. | Executive decision, logged. | Confirm the rewrite is correct for whoever the next executor is. |
-| Licence posture | I marked the interim placeholder posture as `OWNER_DEFERRED` and hard-locked everything against public release/remote tag push. The current root legal posture is `NOTICE.md`. I did not **author** a public licence — that is owner work. | Private notice only. | Owner decision needed before any release gate can ever clear. |
+| Licence and data posture | The repo now carries Apache-2.0 code and CC-BY-4.0 documentation posture; data, derived manifests, HF artefacts, model checkpoints, and image-bearing sources remain separately governed. | `LICENSE`, `NOTICE`, `DATA_POLICY.md`, `docs/LEGAL_BOUNDARIES.md` | Confirm no doc implies corpus/image/checkpoint redistribution from the code/docs licences. |
 
 ## Candid Operational Note
 
@@ -147,7 +158,7 @@ reviewers are entitled to override.
 | Pod audit of upstream scripts + manifests | `docs/evidence/ARTEFACT_CHECKSUMS.md` pins |
 | Smoke runner + schema + self-test authored | `code/cuneiform_control/*`, `tests/*` |
 | Smoke executed on pod (CPU-only, 32 vCPU) | `artefacts/smoke/manifest_validation_report.json` |
-| HF dataset created private + 6 uploads + post-upload verify | `artefacts/smoke/hf_upload_verify.json`; HF revision `c64e22f6…` |
+| HF dataset created private + 6 uploads + post-upload verify | `artefacts/smoke/hf_upload_verify.json`; initial HF revision `c64e22f6…`; later split/mirror recorded in `docs/HF_CUSTODY_REGISTER.md` |
 | Phase 03 handover: `pyproject.toml`, front-door doc rewrites, `v0.1.0-internal` tag (local-only) | Commit `4619876` pushed to `main` |
 | Closeout pass: flatten repo root, scrub operational paths, add private notice, record `HF_CUSTODY_REGISTER.md`, add `--manifest-label` CLI flag, re-run smoke with scrubbed label | Closeout commit (this commit) pushed to `main` |
 

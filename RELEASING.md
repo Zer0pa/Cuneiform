@@ -12,8 +12,9 @@ not ready.
 |---|---|---|
 | Snapshot | Sharing a dated internal migration state for review | Docs, source boundary, and failed-gate visibility are coherent |
 | Internal tag (e.g. `v0.1.0-internal`) | Shipping a private internal milestone (Phase 03 close) | Evidence, docs, and data posture agree; smoke `PASS` recorded; HF custody pinned; tag is **annotated and local** — not pushed |
-| Tagged remote release | Shipping a milestone tag to GitHub | Owner clears licence posture (currently `OWNER_DEFERRED`) AND the failed gate is unchanged → still `INTERNAL`-org visibility only |
-| Public release | Not currently allowed | Requires repaired governing gate, clear licence authority, AND a real extracted rerun surface that goes beyond manifest validation |
+| Tagged remote release | Shipping a milestone tag to GitHub | Owner clears versioning/tag intent; evidence, docs, data posture, and no-go wording still agree |
+| Public/lab visibility | Showing the repo as a live lab window or website-sync source | Front door must keep `NO_GO_GOVERNING_GATE_UNMET` adjacent to any smoke `PASS`; no rights-gated data is exposed |
+| Product or scientific-success release | Claiming release-ready product status, cuneiform recovery, or repaired science | Not currently allowed; requires repaired governing gate and a real extracted rerun surface beyond manifest validation |
 
 ## Required Checks (every tag, internal or otherwise)
 
@@ -25,10 +26,12 @@ not ready.
 - The smoke report (`artefacts/smoke/manifest_validation_report.json`) verdict
   is `PASS` and the schema/manifest SHA-256s match the pins.
 - HF dataset visibility is `private` and the recorded revision matches
-  `state.json`.
+  current custody registers.
 - Licence references are correct for the release being published.
 - Release notes and roadmap language do not overclaim.
 - The release does not soften `NO_GO_GOVERNING_GATE_UNMET`.
+- The Ops-Gates coupling audit is either green or explicitly blocked on the
+  `OPS_GATES_READ_TOKEN` CI secret.
 
 ## Live Sync Sequence
 
@@ -53,10 +56,10 @@ Tag spec:
 | Tag message | "Control-pack v0.1.0 internal — Phase 03 close. Smoke PASS; governing verdict NO_GO_GOVERNING_GATE_UNMET unchanged." |
 | Required artefacts in tree | `artefacts/smoke/manifest_validation_report.json`, `artefacts/smoke/hf_upload_verify.json`, `docs/evidence/ARTEFACT_CHECKSUMS.md`, `code/cuneiform_control/`, `pyproject.toml` |
 
-## Owner Inputs Still Required Before Any Public Release
+## Owner Inputs Still Required Before Any Product/Scientific Release
 
 - `OWNER_DEFERRED_VERSIONING` policy
 - `CHANGELOG_LOCATION_TBD`
-- `OWNER_DEFERRED_LICENSE_IDENTITY` — until set, **all release types public or
-  external are forbidden**
+- explicit public-vs-internal visibility decision for the GitHub repo setting
+- explicit dataset/manifest redistribution ruling for derived artefacts
 - `NO_PUBLIC_COMPATIBILITY_PROMISE_YET`

@@ -1,17 +1,28 @@
-# Hugging Face Dataset Plan — `Zer0pa/cuneiform-control-artefacts`
+# Hugging Face Dataset Plan — historical Phase 01 plan
 
 > **Phase 01 staging artefact.** This file names the HF dataset and its custody
-> rules. It does **not** create or upload the dataset — that is a Phase 02 act
-> gated on checksum pins and provenance review.
+> rules. Phase 02 and later custody work has now executed; current authority is
+> `docs/HF_CUSTODY_REGISTER.md` plus `docs/evidence/ARTEFACT_CHECKSUMS.md`.
+> This file is retained as planning history, not current HF state.
+
+## Current State As Of 2026-04-28
+
+| Surface | State |
+|---|---|
+| Canonical heavy/private store | `Architect-Prime/cuneiform-control-artefacts`, private, latest verified revision `3ed3f0d40585b9afa9366d7748f7d8228de1bf25` |
+| Lightweight private discovery surface | `Zer0pa/cuneiform-control-artefacts`, private, revision `e08e1694c337a8298d92c058b416053b04f239f6`, M-04..M-06 only |
+| Source of truth | `docs/HF_CUSTODY_REGISTER.md` Verification 5 |
+| Governing verdict | `NO_GO_GOVERNING_GATE_UNMET`; unchanged by HF custody |
 
 ## Identity
 
 | Key | Value |
 |---|---|
-| Intended ID | `Zer0pa/cuneiform-control-artefacts` |
-| Visibility | `private` (default; can be downgraded to wider access only after the governing gate changes on evidence, which this pack cannot deliver) |
-| Owner | `Zer0pa HF Storage` |
-| Creation date | **NOT YET CREATED** — creation is a Phase 02 act |
+| Original intended ID | `Zer0pa/cuneiform-control-artefacts` |
+| Actual canonical heavy store | `Architect-Prime/cuneiform-control-artefacts` |
+| Visibility | `private`; do not widen for this lane |
+| Owner | Zer0pa / Architect-Prime private custody |
+| Creation date | Created during Phase 02; later split and mirrored per HF custody register |
 
 ## Scope
 
@@ -40,7 +51,9 @@ Forbidden families (never upload):
 4. **Checksum table** — SHA-256 per file, cross-referenced to
    `docs/evidence/ARTEFACT_CHECKSUMS.md`.
 5. **Linkback** — URL of this repo and of the failed-gate evidence page.
-6. **Licence posture** — `OWNER_DEFERRED`; gating public reuse.
+6. **Licence posture** — code/docs licensing does not grant rights to private
+   HF artefacts, derived manifests, model checkpoints, or image-bearing source
+   corpora.
 
 ## Phase 02 Entry Procedure
 

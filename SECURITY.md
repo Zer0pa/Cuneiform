@@ -3,8 +3,9 @@
 ## Reporting
 
 Report security issues through the owner-controlled private route for this
-migration package. Do not open a public vulnerability issue for this private
-control-pack scaffold.
+control-pack repository. Do not open a public vulnerability issue for anything
+that could expose private artefacts, credentials, operator-local paths, or an
+unpatched attack path.
 
 If you are unsure whether something is security-sensitive, default to private
 reporting first.
@@ -21,9 +22,12 @@ reporting first.
 
 | Step | Target |
 |---|---|
-| Initial acknowledgement | owner-deferred |
-| Triage decision | owner-deferred |
-| Fix or mitigation update | owner-deferred |
+| Initial acknowledgement | within 5 business days |
+| Triage decision | within 10 business days after acknowledgement |
+| Fix, mitigation, or deferral update | within 30 business days after triage |
+
+If a report is blocked on private evidence or owner action, the update should
+say that plainly rather than converting the report into a pass narrative.
 
 ## Public Issues
 
@@ -35,6 +39,9 @@ template only for non-sensitive defects.
 
 State any current security limitations plainly:
 
-- No public remote is authorized by this scaffold.
+- Public visibility, if enabled by the operator, does not authorize publishing
+  exploit details, private artefacts, endpoint data, or credentials.
 - No raw image corpora, credentials, owner-local paths, or restricted rerun
   substrates belong in repo custody.
+- CI includes both repo-local operational-leak scanning and a pinned Ops-Gates
+  coupling audit; failures are operational blockers, not science-gate changes.

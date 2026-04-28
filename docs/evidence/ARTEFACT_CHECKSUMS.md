@@ -33,7 +33,10 @@
 | `M-06` | `7163eae78448b73bd924f508575b2d1de1df4b94c6e39e14d669ae85f82a4aa9` | 4,466 | `workspace/share/science_engineering_review_2026-04-10/09_REVIEW_PACK_MANIFEST.json` | no — review-pack index | both |
 
 `AP canonical` = `Architect-Prime/cuneiform-control-artefacts` (private,
-revision `03ad7397dc12be58289481ff8a209349c6ed9042`).
+latest token-verified revision
+`3ed3f0d40585b9afa9366d7748f7d8228de1bf25`; the original split/upload
+revision `03ad7397dc12be58289481ff8a209349c6ed9042` remains historical in
+`docs/HF_CUSTODY_REGISTER.md`).
 `both` = canonical on AP **and** lightweight backup on
 `Zer0pa/cuneiform-control-artefacts` (private, revision
 `e08e1694c337a8298d92c058b416053b04f239f6`).

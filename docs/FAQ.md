@@ -15,15 +15,17 @@ platform component.
 ## What is actually verified here?
 
 The staged evidence summary verifies that the control lane exists and that the
-P5 governing gate failed at `governing_1nn_accuracy = 0.021916`. See
-`docs/evidence/CUNEIFORM_PHASE2_GATE_STATUS.md` and
-`docs/evidence/CUNEIFORM_CONTROL_RESULTS.md`.
+P5 governing gate failed at `governing_1nn_accuracy = 0.021916`. The installable
+smoke package verifies manifest custody and shape only. See
+`docs/evidence/CUNEIFORM_PHASE2_GATE_STATUS.md`,
+`docs/evidence/CUNEIFORM_CONTROL_RESULTS.md`, and
+`artefacts/smoke/manifest_validation_report.json`.
 
 ## What is still unknown or deferred?
 
-An extracted installable rerun surface, a tiny smoke path, and any future gate
-repair remain deferred. Data-rights clearance for image-bearing assets is also
-deferred.
+A full scientific rerun surface and any future gate repair remain deferred.
+Data-rights clearance for image-bearing assets is also deferred. The current
+package is intentionally limited to manifest validation.
 
 ## Why does public documentation mention audit limits?
 

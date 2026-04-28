@@ -27,6 +27,5 @@ rights and provenance posture.
 ## Current Blocking Inputs
 
 - explicit redistribution ruling for image-bearing assets
-- explicit redistribution ruling for image-bearing assets
-- admission decision on which benchmark manifests are safe for remote custody
-
+- public-distribution ruling for derived manifests and any HF-hosted artefact
+  beyond private custody
