@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: >-
+  If you reference or build on the methods, evidence chain, or
+  negative-control framing in this repository, please cite it as below.
+title: "Gnosis Cuneiform: Negative-Control Preservation Lane"
+abstract: >-
+  gnosis-cuneiform is a negative-control / control-pack repository inside the
+  Zer0pa Gnosis Portfolio. It preserves the cuneiform benchmark/control
+  artefact chain, the failed governing gate (NO_GO_GOVERNING_GATE_UNMET at
+  governing_1nn_accuracy = 0.021916), and a stdlib-only manifest-validation
+  smoke surface. Methodology only; no decipherment claim.
+authors:
+  - name: "Zer0pa Architects"
+    website: "https://github.com/Zer0pa"
+repository-code: "https://github.com/Zer0pa/Cuneiform"
+license: Apache-2.0
+date-released: "2026-04-28"
+keywords:
+  - gnosis
+  - cuneiform
+  - negative-control
+  - falsification
+  - manifest-validation
+  - methodology
+  - no-decipherment-claim

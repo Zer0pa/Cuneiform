@@ -1,5 +1,11 @@
 # Gnosis Cuneiform
 
+> This is a live window into the Zer0pa lab. None of the work in this repo is
+> a final release. Zer0pa GitHub repos are open as a matter of course for
+> visibility and community participation. Always-in-beta is the posture: useful
+> now, improving continuously. Open gates and honest blockers are surfaced in
+> plain text below — see `## What We Don't Claim` and `## Upcoming Workstreams`.
+
 ## Licensing
 
 This repository is part of the Zer0pa Gnosis Portfolio.
@@ -47,6 +53,17 @@ scientific flagship. It ships a stdlib-only **manifest-validation smoke
 surface** so the custody and shape of pinned inherited artefacts are
 mechanically checkable from a fresh checkout.
 
+**Headline metric:** `pytest -q` → **3 passed in 0.04s**; 5/5 cross-field
+invariants hold on real-manifest smoke (`artefacts/smoke/manifest_validation_report.json`);
+6/6 SHA-256 pinned upstream manifest custody verified against
+`Architect-Prime/cuneiform-control-artefacts` (token-verified 2026-04-27,
+`docs/HF_CUSTODY_REGISTER.md` Verification 5).
+
+**Honest blocker:** The inherited governing gate `NO_GO_GOVERNING_GATE_UNMET`
+failed at `governing_1nn_accuracy = 0.021916` and remains failed. This lane
+preserves the negative result as a first-class output; repairing the gate is
+out of scope for this lane (see `## Upcoming Workstreams`).
+
 ## What We Prove
 
 - The cuneiform benchmark/control artefact chain is real and pinned. Six
@@ -86,6 +103,17 @@ mechanically checkable from a fresh checkout.
 | Operational-leak scan | 0 hits for forbidden operational patterns (concrete RunPod IPs, raw SSH endpoints, local home paths, retired monorepo paths, pod IDs) | `Operational-leak scan` step in `.github/workflows/ci.yml` |
 | GitHub Actions | minimal private-repo CI on `main` (this commit) | `.github/workflows/ci.yml` |
 
+## Commercial Readiness
+
+| Field | Value |
+|---|---|
+| **Verdict** | `STAGED` |
+| **Posture** | `negative_control_preservation` |
+
+This lane is public as a lab window, not as a product release. The negative
+result (`NO_GO_GOVERNING_GATE_UNMET`) is a first-class scientific output.
+Commercial readiness in the traditional sense is not the goal of this lane.
+
 ## Proof Anchors
 
 | Need | File |
@@ -121,6 +149,7 @@ mechanically checkable from a fresh checkout.
 | `docs/migration/` | Original migration-package brief, authority, source inventory, handover (preserved as transfer history). |
 | `.gpd/` | GPD phase pack: project, requirements, roadmap, state, four closed phases (00–03). |
 | `.github/workflows/ci.yml` | Minimal private-repo CI: install + pytest + smoke help. |
+| `_internal/` | Agent-orchestration scaffolding (AUTONOMOUS_EXECUTION_POLICY, GPD_BOOTSTRAP_GUIDE, STARTUP_PROMPT, TEMPLATE_USAGE, WORKSTREAM_GPD_INIT_CHECKLIST, MIGRATION_PLAN, TODO). Not reader-facing. |
 
 ## Quick Start
 
@@ -167,10 +196,34 @@ pinned SHA-256. It **does not** repair `NO_GO_GOVERNING_GATE_UNMET`.
   the checksum register, not a blocker for this lane.
 - Image-bearing sources and some upstream datasets remain rights-constrained
   or fetch-only; pixel-bearing data is never vendored.
-- The repository license matrix has landed (`Apache-2.0` for code,
-  `CC-BY-4.0` for docs). No remote tag push and no public visibility change
-  until rights-gated data and release wording are reviewed.
 - `NO_GO_GOVERNING_GATE_UNMET` remains the sovereign scientific truth.
   Repairing it is **out of scope** for this lane and is external work for a
   separate workstream (likely `gnosis-glyph-engine` or
   `gnosis-falsification-harness`).
+
+## Upcoming Workstreams
+
+### Active Engineering
+
+- Smoke surface tightening if new schema variants are contributed (the
+  stdlib-only constraint is a feature, not a bug — preserve it).
+
+### Research-Deferred — Investigation Underway
+
+- None currently. If upstream changes substrate-discrimination methodology,
+  revisit whether P6/P7 diagnostics graduate from diagnostic-only to gate
+  candidates.
+
+### Operations / External Dependency
+
+- **P5 governing-gate repair** is owned by a separate workstream (likely
+  `gnosis-glyph-engine` or `gnosis-falsification-harness`). This lane
+  preserves the negative result; it does not initiate gate repair.
+- **Rights clearance** for image-bearing corpus redistribution remains
+  unresolved; no action here until upstream rights review completes.
+
+### Zero-Base Scientific Thinking — GPD Research and Planning Pending
+
+- None currently scheduled. A new milestone in this lane opens only if a
+  separate workstream produces gate-repair evidence that warrants revisiting
+  the governing verdict.
