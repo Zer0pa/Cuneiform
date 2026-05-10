@@ -12,8 +12,8 @@ not ready.
 |---|---|---|
 | Snapshot | Sharing a dated internal migration state for review | Docs, source boundary, and failed-gate visibility are coherent |
 | Internal tag (e.g. `v0.1.0-internal`) | Shipping a private internal milestone (Phase 03 close) | Evidence, docs, and data posture agree; smoke `PASS` recorded; HF custody pinned; tag is **annotated and local** — not pushed |
-| Tagged remote release | Shipping a milestone tag to GitHub | Owner clears licence posture (currently `OWNER_DEFERRED`) AND the failed gate is unchanged → still `INTERNAL`-org visibility only |
-| Public release | Not currently allowed | Requires repaired governing gate, clear licence authority, AND a real extracted rerun surface that goes beyond manifest validation |
+| **Custody-only public release** (e.g. `v0.1.0` on PyPI as `cuneiform-control`) | Shipping the manifest-validation control pack publicly while the scientific gate remains failed | Apache-2.0 (code) / CC-BY-4.0 (docs) declared; smoke `PASS` recorded; HF custody pinned; release notes and PyPI summary explicitly preserve `NO_GO_GOVERNING_GATE_UNMET`; **no decipherment claimed**; no image-bearing source corpora redistributed |
+| Scientifically-repaired public release | Promoting the lane beyond custody-only | **Not currently allowed.** Requires repaired governing gate on new scientific evidence, AND a real extracted rerun surface that goes beyond manifest validation |
 
 ## Required Checks (every tag, internal or otherwise)
 
@@ -41,22 +41,41 @@ not ready.
 5. Publish the release only after the rendered repo matches the approved local
    state.
 
-## v0.1.0-internal (Phase 03 close)
+## v0.1.0-internal (Phase 03 close, historical)
 
 Tag spec:
 
 | Field | Value |
 |---|---|
 | Tag name | `v0.1.0-internal` |
-| Type | annotated |
-| Pushed to remote | **NO** — local-only until owner clears licence + visibility decisions |
+| Type | annotated, local-only |
 | Tag message | "Control-pack v0.1.0 internal — Phase 03 close. Smoke PASS; governing verdict NO_GO_GOVERNING_GATE_UNMET unchanged." |
+| Status | Historical staging tag; superseded by the public custody-only release `v0.1.0` (below) |
+
+## v0.1.0 (Custody-only public release, 2026-05-04)
+
+Release spec — what was actually shipped:
+
+| Field | Value |
+|---|---|
+| Tag name | `v0.1.0` |
+| Type | annotated, pushed to `origin/main` |
+| GitHub release | `https://github.com/Zer0pa/Cuneiform/releases/tag/v0.1.0` (published 2026-05-04T01:44:58Z) |
+| PyPI | `cuneiform-control` 0.1.0 (Apache-2.0, Trusted Publishing via `.github/workflows/publish.yml`) |
+| PyPI summary (verbatim) | "Control-pack manifest validation for the cuneiform benchmark lane. Stdlib-only. **Does not repair the failed governing gate.**" |
 | Required artefacts in tree | `artefacts/smoke/manifest_validation_report.json`, `artefacts/smoke/hf_upload_verify.json`, `docs/evidence/ARTEFACT_CHECKSUMS.md`, `code/cuneiform_control/`, `pyproject.toml` |
+| Failed-gate boundary preserved | `NO_GO_GOVERNING_GATE_UNMET` carried verbatim into release notes, PyPI summary, README, and `.gpd/STATE.md`; no decipherment claimed; no image-bearing source corpora redistributed |
+| Scope discipline | Custody and shape only. The release proves the manifest chain replays bit-identically; it does **not** repair the scientific gate, decipher cuneiform, or unblock private corpus rights |
 
-## Owner Inputs Still Required Before Any Public Release
+## Owner Inputs Resolved Before v0.1.0 Custody-only Release
 
-- `OWNER_DEFERRED_VERSIONING` policy
-- `CHANGELOG_LOCATION_TBD`
-- `OWNER_DEFERRED_LICENSE_IDENTITY` — until set, **all release types public or
-  external are forbidden**
-- `NO_PUBLIC_COMPATIBILITY_PROMISE_YET`
+- ✅ Licence: Apache-2.0 (code) + CC-BY-4.0 (docs) — declared in `LICENSE`, `pyproject.toml`, `CITATION.cff`, `.zenodo.json`, README; `Private :: Do Not Upload` classifier removed (`3d29caa`)
+- ✅ Versioning: SemVer; v0.1.0 first public custody-only release
+- ✅ Changelog location: GitHub releases page + repo `CHANGELOG.md`
+- ✅ Compatibility promise: bounded — Python ≥ 3.8, stdlib-only smoke runner; manifest format pinned by `artefacts/smoke/manifest_validation_report.json`
+
+## Owner Inputs Still Required Before Any Scientifically-Repaired Release
+
+- Repaired governing gate on new scientific evidence (`NO_GO_GOVERNING_GATE_UNMET` cleared)
+- Extracted rerun surface beyond manifest validation
+- Image/corpus rights resolution for any redistributable raw-data surface
