@@ -2,6 +2,39 @@
 
 ## Install / Developer Commands
 
+<!-- INSTALL-DX:START -->
+#### Package Install
+
+Installable package: `python3.11 -m pip install cuneiform-control`.
+Current release: `0.1.0` on [PyPI](https://pypi.org/project/cuneiform-control/).
+Source: [Zer0pa/Cuneiform](https://github.com/Zer0pa/Cuneiform/).
+
+```bash
+python3.11 -m pip install cuneiform-control
+```
+
+Import smoke:
+
+```bash
+python3.11 - <<'PY'
+import importlib.metadata as md
+import cuneiform_control
+
+print("cuneiform-control", md.version("cuneiform-control"))
+PY
+```
+
+
+CLI smoke:
+
+```bash
+cuneiform-smoke --help
+```
+
+Install success only proves package acquisition/import. Product scope, stale PyPI state, platform limits, and blockers remain in the front-door sections below.
+- Use the hyphenated PyPI name for install; the Python module is `cuneiform_control`.
+<!-- INSTALL-DX:END -->
+
 #### Quick Start
 
 Verified end-to-end on 2026-04-25. Commands run from a fresh clone.
