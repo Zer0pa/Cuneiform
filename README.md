@@ -1,59 +1,72 @@
-# Gnosis Cuneiform
+# Cuneiform
 
-## What This Is
+> Product-page mirror for `/gnosis/Gnosis-Cuneiform/`.
+> Live public repo: [Zer0pa/Cuneiform](https://github.com/Zer0pa/Cuneiform).
+> GitHub Markdown cannot reproduce the website typography, CSS, JavaScript, scroll behavior, or live bento layout; this README translates the product page into GitHub-safe Markdown evidence blocks.
 
-Gnosis negative-control control pack preserving cuneiform benchmark custody, failed-gate evidence, source/data boundaries, and a stdlib-only manifest-validation smoke.
+## 0. Install / Developer Commands
 
-`gnosis-cuneiform` is a Method Mechanics lane in the Gnosis portfolio. It keeps the cuneiform benchmark/control artefact chain inspectable without promoting the lane as a product, a decipherment result, or a repaired scientific gate.
+The product page is the positioning authority. This section is the only retained developer-surface material from the previous root README.
 
-The public posture is control-only: useful for audit and falsification, blocked for promotion, and explicit about Traditional-Knowledge, source-boundary, data-rights, and public-audit limits.
+```bash
+# 1. Install the smoke surface (zero third-party runtime deps; pytest pulled in for tests)
+python -m pip install --upgrade pip
+python -m pip install -e . pytest
+pytest -q
+```
 
-## Method Mechanics
+## Product Page Mirror
 
-| Mechanic | Current implementation | Authority |
-|---|---|---|
-| Control-pack role | Preserves the cuneiform benchmark truth surface as `MODULE_ONLY_CONTROL_PACK`; no sovereign product promotion. | `SOVEREIGN_PRD.md` |
-| Governing falsification gate | Keeps `NO_GO_GOVERNING_GATE_UNMET` at `governing_1nn_accuracy = 0.021916`; P6/P7 diagnostics remain diagnostic-only. | `docs/evidence/CUNEIFORM_PHASE2_GATE_STATUS.md` |
-| Source boundary | Admits only cuneiform-specific control/rerun material; shared geometry, transport, and generic evaluation kernels stay out of this repo. | `SOURCE_BOUNDARY.md` |
-| Smoke target | Validates manifest custody and shape only: checksum, schema, five cross-field invariants, and preserved failed-gate fields. | `artefacts/smoke/manifest_validation_report.json` |
-| Public audit boundary | Allows reviewers to verify the visible scaffold, pins, smoke report, and failed-gate posture; does not expose private HF bytes or rights-limited corpora. | `PUBLIC_AUDIT_LIMITS.md` |
+**Product-page title:** Gnosis-Cuneiform · Evidenced-negative control pack · Zer0pa
+
+**Product-page description:** Gnosis-Cuneiform · negative-control pack · governing 1NN classifier below target at 0.021916 (NO_GO_GOVERNING_GATE_UNMET) · stdlib-only manifest smoke 5/5 invariants PASS · SHA-pinned upstream artefact · no decipherment claimed · PyPI cuneiform-control v0.1.0 · Apache-2.0
+
+### Hero Translation
+
+> 00 · GNOSIS-CUNEIFORM · COMPUTATIONAL MORPHOLOGYRESEARCH-READY · P5 NO-GO Five thousand years of writing, searchable by its shape. Cuneiform morphology, kept honest · Gnosis-Cuneiform · PyPI cuneiform-control v0.1.0 · github.com/Zer0pa/Cuneiform Cuneiform is one of the oldest writing systems on earth — five thousand years of pressed marks in clay. Gnosis-Cuneiform measures the geometry of those signs so archives, classrooms, and museums can look across collections by shape. The first attempt at a governing classifier scored 0.021916 against a 0.6 target, and the score stays on the record. This page is shape infrastructure, not a reading claim, and the image-bearing corpora stay outside the public pack.
+
+## Positioning
+
+| Field | Value |
+| --- | --- |
+| Section | gnosis |
+| Product route | /gnosis/Gnosis-Cuneiform/ |
+| Live public repository | https://github.com/Zer0pa/Cuneiform |
+| Repo identity used here | Cuneiform |
+| Website display identity | Cuneiform |
+| Verdict | STAGED |
+| Posture | negative_control_preservation |
+| Headline metric | pytest -q → 3 passed in 0.04s; 5/5 cross-field invariants holding on real-manifest smoke; 6/6 SHA-256 pinned upstream manifests verified. |
+| Honest blocker | The inherited governing gate NO_GO_GOVERNING_GATE_UNMET failed at governing_1nn_accuracy = 0.021916 and remains failed. This lane preserves the negative result as a first-class output. |
+| Mechanics asset from product page |  |
 
 ## Key Metrics
 
-| Metric | Value | Evidence |
-|---|---|---|
+| Metric | Value | Baseline |
+| --- | --- | --- |
 | Governing gate | `NO_GO_GOVERNING_GATE_UNMET`; `governing_1nn_accuracy = 0.021916` | `docs/evidence/CUNEIFORM_PHASE2_GATE_STATUS.md` |
 | Manifest smoke | `PASS`; 5/5 invariants OK, 0 schema errors, observed SHA matches pin | `artefacts/smoke/manifest_validation_report.json` |
 | Hermetic tests | `pytest -q` -> 3 self-tests; smoke runner is stdlib-only with zero runtime dependencies | `tests/test_smoke_runner.py`, `pyproject.toml` |
 | HF custody | 6/6 lane-pinned manifests verified against SHA-256 pins; AP heavy store remains private | `docs/HF_CUSTODY_REGISTER.md`, `artefacts/smoke/hf_upload_verify.json` |
 
-## Repo Identity
+## Proof Anchors
 
-| Field | Value |
-|---|---|
-| Identifier | `gnosis-cuneiform` |
-| Repository | `https://github.com/Zer0pa/Cuneiform` |
-| Portfolio / domain | Gnosis methodology; cuneiform negative-control/control-pack lane |
-| Visibility | `PUBLIC` |
-| Default branch | `main` |
-| Authority source | `SOVEREIGN_PRD.md`; `.gpd/STATE.md`; `.gpd/DECISIONS.md` |
-| License | Code: `Apache-2.0`; documentation/reports/written materials: `CC-BY-4.0`; data by rights class in `DATA_POLICY.md` |
-| Last verified | 2026-05-02 GitHub main alignment pass |
-
-## Readiness
-
-| Field | Value |
-|---|---|
-| Verdict | `BLOCKED` |
-| Posture | `HOLD_CONTROL_ONLY`; negative-control preservation |
-| Checks | Hermetic tests pass; manifest smoke passes; HF custody pins verify; governing gate remains failed |
-| Anchors | 6 display anchors |
-| Authority | `SOVEREIGN_PRD.md`; `PUBLIC_AUDIT_LIMITS.md`; `.gpd/STATE.md` |
-| Public surface | Lab window only; not a product release or scientific flagship |
-
-### Honest Blocker
-
-The inherited governing gate `NO_GO_GOVERNING_GATE_UNMET` remains failed at `governing_1nn_accuracy = 0.021916`. The smoke surface proves custody and shape only; it cannot repair the gate, clear image/corpus rights, or authorize public-release claims.
+| Path | State |
+| --- | --- |
+| docs/EXECUTOR_STATUS_REPORT.md | Reviewer landing page |
+| SOVEREIGN_PRD.md | Sovereign brief |
+| docs/evidence/CUNEIFORM_PHASE2_GATE_STATUS.md | Failed-gate evidence |
+| docs/evidence/CUNEIFORM_CONTROL_RESULTS.md | Control-results summary |
+| docs/evidence/ARTEFACT_CHECKSUMS.md | Pinned SHA-256 register |
+| artefacts/smoke/manifest_validation_report.json | Smoke validation report |
+| artefacts/smoke/hf_upload_verify.json | HF upload verify |
+| docs/HF_CUSTODY_REGISTER.md | HF custody register |
+| docs/PATH_REWRITE_LEDGER.md | Path-rewrite ledger |
+| docs/MINIMAL_SMOKE_TARGET.md | Smoke target spec |
+| docs/ARCHITECTURE.md | Architecture / truth map |
+| AUDITOR_PLAYBOOK.md | Auditor playbook |
+| PUBLIC_AUDIT_LIMITS.md | Public audit limits |
+| .gpd/STATE.md | Current state |
 
 ## What We Prove
 
@@ -62,7 +75,7 @@ The inherited governing gate `NO_GO_GOVERNING_GATE_UNMET` remains failed at `gov
 - `SMOKE-01-MANIFEST-VALIDATION` runs and passes against the pinned upstream manifest with all 5 cross-field invariants holding and 0 schema errors.
 - The smoke surface is stdlib-only, third-party-dependency-free, and reproducible on any Python >= 3.8 host without provisioning.
 
-## What We Don't Claim
+## What We Do Not Claim
 
 - We do not claim the failed governing gate is repaired. The smoke is custody-only by construction; it cannot move the gate.
 - We do not claim cuneiform decipherment, substrate identification, or any positive scientific recovery on this corpus.
@@ -71,131 +84,159 @@ The inherited governing gate `NO_GO_GOVERNING_GATE_UNMET` remains failed at `gov
 - We do not claim proprietary rights over cuneiform, its scripts, or the archaeological record.
 - We do not claim that shared geometry, transport, or generic evaluation kernels belong in this repo.
 
-## Verification Status
+## Blockers / Failures
+
+> The inherited governing gate NO_GO_GOVERNING_GATE_UNMET failed at governing_1nn_accuracy = 0.021916 and remains failed. This lane preserves the negative result as a first-class output.
+
+## Verification Surface
 
 | Code | Check | Verdict |
-|---|---|---|
-| V-01 | Hermetic self-test: `pytest -q` returns 3 passing tests against bundled fixtures. | `PASS` |
-| V-02 | Real-manifest smoke: checksum, schema, and 5/5 cross-field invariants pass. | `PASS` |
-| V-03 | HF post-upload SHA verify: 6/6 admitted manifest pins match observed hashes. | `PASS` |
-| V-04 | HF custody register: AP heavy store and Zer0pa lightweight surface remain private and token-verified. | `PASS` |
-| V-05 | Operational-leak scan in CI blocks concrete IPs, raw SSH endpoints, local home paths, retired monorepo paths, and pod IDs. | `PASS` |
-| V-06 | Governing science gate remains failed and cannot be repaired by this smoke. | `BLOCKED` |
-| V-07 | Public redistribution of image-bearing corpora and some derived data remains rights-constrained. | `BLOCKED` |
+| --- | --- | --- |
+| V-01 | Hermetic self-test: `pytest -q` returns 3 passing tests against bundled fixtures. | PASS |
+| V-02 | Real-manifest smoke: checksum, schema, and 5/5 cross-field invariants pass. | PASS |
+| V-03 | HF post-upload SHA verify: 6/6 admitted manifest pins match observed hashes. | PASS |
+| V-04 | HF custody register: AP heavy store and Zer0pa lightweight surface remain private and token-verified. | PASS |
+| V-05 | Operational-leak scan in CI blocks concrete IPs, raw SSH endpoints, local home paths, retired monorepo paths, and pod IDs. | PASS |
+| V-06 | Governing science gate remains failed and cannot be repaired by this smoke. | STAGED |
+| V-07 | Public redistribution of image-bearing corpora and some derived data remains rights-constrained. | STAGED |
 
-## Proof Anchors
+## License
 
-| Path | State |
-|---|---|
-| `SOVEREIGN_PRD.md` | VERIFIED |
-| `SOURCE_BOUNDARY.md` | VERIFIED |
-| `DATA_POLICY.md` | VERIFIED |
-| `PUBLIC_AUDIT_LIMITS.md` | VERIFIED |
-| `.gpd/DECISIONS.md` | VERIFIED |
-| `artefacts/smoke/manifest_validation_report.json` | VERIFIED |
-
-## Repo Shape
-
-| Path | What Lives Here |
-|---|---|
-| `README.md`, `SOVEREIGN_PRD.md`, `AUDITOR_PLAYBOOK.md`, `AGENTS.md` | Front door, sovereign brief, reviewer entry, agent brief. |
-| `SOURCE_BOUNDARY.md`, `DATA_POLICY.md`, `GOVERNANCE.md`, `RELEASING.md`, `PUBLIC_AUDIT_LIMITS.md` | Source, data, governance, release, and public-audit boundaries. |
-| `code/cuneiform_control/` | Stdlib-only smoke runner and JSON Schema. |
-| `tests/` | Hermetic pytest-discovered self-tests for pass, invariant-fail, and checksum-fail paths. |
-| `pyproject.toml` | Package manifest (`Private :: Do Not Upload`; zero runtime deps). |
-| `artefacts/smoke/` | Deterministic smoke report and HF-upload-verify report. |
-| `docs/evidence/` | Failed-gate evidence, control results, and SHA-256 pin register. |
-| `docs/` | Architecture, ledgers, smoke target, HF custody, rerun guide, executor status, and support docs. |
-| `docs/migration/` | Original migration-package brief, authority, source inventory, and handover history. |
-| `.gpd/` | GPD state, decisions, roadmap, requirements, conventions, and four closed phases. |
-| `.github/workflows/ci.yml` | Minimal CI: install, pytest, smoke help, operational-leak scan, clean-tree check. |
-| `_internal/` | Agent-orchestration scaffolding; not reader-facing. |
-
-## Traditional-Knowledge Acknowledgment
-
-This repository works with material in cuneiform-bearing writing systems (Sumerian, Akkadian, Babylonian, and related). Zer0pa claims no proprietary right over cuneiform, its scripts, or the archaeological record.
-
-This repository preserves a negative-control result as a first-class output; it does not claim a definitive decipherment of cuneiform or related scripts.
-
-Good-faith inquiries from identified communities, governmental antiquity authorities, or institutional bodies may be sent to architects@zer0pa.ai.
-
-## Data And Public Audit Boundaries
-
-The data boundary is evidence, not boilerplate:
-
-- Staged docs, PRD, handover surfaces, and derived benchmark summaries can be published as repo-local written material.
-- Benchmark manifests and derived JSON outputs are `PUBLISH_WITH_REVIEW`; each file still needs provenance review before any remote promotion.
-- Image previews and raw image-bearing corpora are `FETCH_EXTERNALLY_OR_INTERNAL_ONLY` until rights posture is cleared.
-- Model weights and intermediate experimental checkpoints are `INTERNAL_ONLY` and are not needed for the current control-pack truth surface.
-- A public audit can verify the source tree, path-rewrite ledger, checksum pins, smoke runner, smoke report, failed-gate posture, and docs coherence; it cannot verify private HF artefact bytes without access or infer private results from public prose.
-
-## Licensing
-
-This repository is part of the Zer0pa Gnosis Portfolio.
-
-**Code** in this repository is licensed under the Apache License 2.0. See `LICENSE` for the full text. SPDX identifier: `Apache-2.0`.
-
-**Documentation, reports, and written materials** are licensed under Creative Commons Attribution 4.0 International. SPDX identifier: `CC-BY-4.0`. Canonical terms: <https://creativecommons.org/licenses/by/4.0/>.
-
-**Data and fixtures** are handled per dataset and artifact family. See `DATA_POLICY.md` for this repository's data boundary. The code license does not license raw corpora, image-bearing cultural-heritage assets, private HF artifacts, model weights, endpoint logs, or operational transcripts.
-
-**Trademarks** - "Gnosis", "Zer0pa Gnosis", and distinctive sub-marks are trademarks of Zer0pa. Apache-2.0 and CC-BY-4.0 do not grant trademark rights. See `TRADEMARKS.md`.
-
-Public visibility is a separate repository-setting action. The license files in this repo define the intended open-source/open-documentation terms for released Gnosis code and written materials; they do not publish rights-gated data.
-
-## Quick Start
-
-Verified end-to-end on 2026-04-25. Commands run from a fresh clone.
-
-```bash
-# 1. Install the smoke surface (zero third-party runtime deps; pytest pulled in for tests)
-python3 -m venv /tmp/cuneiform-control
-source /tmp/cuneiform-control/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -e . pytest
-
-# 2. Hermetic self-test against bundled fixtures (3 cases, < 1 second)
-pytest -q
-
-# 3. Confirm the console entry point works
-cuneiform-smoke --help
-
-# 4. Operational-leak scan: runs in CI; reproduce locally by re-running the
-#    `Operational-leak scan` step from `.github/workflows/ci.yml`.
-
-# 5. Real-manifest replay (only with a locally-held pinned manifest copy):
-cuneiform-smoke \
-  --manifest /path/to/annotated_sign_benchmark_manifest.json \
-  --schema   code/cuneiform_control/schemas/benchmark_manifest.schema.json \
-  --checksum e4d85abf3bfa6901a6b20f7c612f1113e77ef9173ca42e00c9867b88b23daa24 \
-  --manifest-label "<MONOREPO>/workspace/artifacts/cuneiform/annotated_sign_benchmark_manifest.json" \
-  --report /tmp/replay_report.json
-```
-
-A `PASS` verdict from step 5 proves manifest custody and shape against the pinned SHA-256. It does not repair `NO_GO_GOVERNING_GATE_UNMET`.
-
-## Current Gaps
-
-- Full upstream extraction of cuneiform helper modules (`benchmark_common.py`, `bench_tokenizer.py`, `probe_1nn.py`, P6/P7 diagnostics) remains deferred per `docs/PATH_REWRITE_LEDGER.md`. The smoke is custody-only, not a full rerun.
-- `revert_phase2_common.py` is `UPSTREAM_NOT_PRESENT` (`S-06`); it is flagged in the checksum register, not hidden or silently resolved.
-- Image-bearing sources and some upstream datasets remain rights-constrained or fetch-only; pixel-bearing data is never vendored.
-- `NO_GO_GOVERNING_GATE_UNMET` remains the sovereign scientific truth. Repairing it is out of scope for this lane and is external work for a separate workstream, likely `gnosis-glyph-engine` or `gnosis-falsification-harness`.
+| Field | Value |
+| --- | --- |
+| License | Apache-2.0+CC-BY-4.0 |
+| Authority source | README.md |
 
 ## Upcoming Workstreams
 
-### Active Engineering
+| Category | Summary |
+| --- | --- |
+| Active Engineering | Continue current authority-packet refinement on Gnosis-Cuneiform; surface new receipts as they land. |
+| Operations / External Dependency | Maintain CI gates and license-resolver synchronization with Zer0pa/ZPE-License-Commercial. |
 
-- Smoke surface tightening if new schema variants are contributed. Preserve the stdlib-only constraint.
+## Related Repos
 
-### Research-Deferred - Investigation Underway
+No related repos are declared on the product page frontmatter.
 
-- None currently. If upstream changes substrate-discrimination methodology, revisit whether P6/P7 diagnostics graduate from diagnostic-only to gate candidates.
+<details>
+<summary>Full Visible Product-Page Bento Translation</summary>
 
-### Operations / External Dependency
+This section preserves the product page cells as Markdown text blocks. It intentionally omits shared site navigation, footer chrome, CSS, and scripts.
 
-- P5 governing-gate repair is owned by a separate workstream. This lane preserves the negative result; it does not initiate gate repair.
-- Rights clearance for image-bearing corpus redistribution remains unresolved; no action here until upstream rights review completes.
+### Bento Cell 1
 
-### Zero-Base Scientific Thinking - GPD Research and Planning Pending
+> 00 · GNOSIS-CUNEIFORM · COMPUTATIONAL MORPHOLOGYRESEARCH-READY · P5 NO-GO Five thousand years of writing, searchable by its shape. Cuneiform morphology, kept honest · Gnosis-Cuneiform · PyPI cuneiform-control v0.1.0 · github.com/Zer0pa/Cuneiform Cuneiform is one of the oldest writing systems on earth — five thousand years of pressed marks in clay. Gnosis-Cuneiform measures the geometry of those signs so archives, classrooms, and museums can look across collections by shape. The first attempt at a governing classifier scored 0.021916 against a 0.6 target, and the score stays on the record. This page is shape infrastructure, not a reading claim, and the image-bearing corpora stay outside the public pack.
 
-- None currently scheduled. A new milestone in this lane opens only if a separate workstream produces gate-repair evidence that warrants revisiting the governing verdict.
+### Bento Cell 2
+
+> 01 · THE GAPSUCCESS-ONLY RECORD Experts catalogue cuneiform sign by sign. Cross-collection search still begins from human memory.
+
+### Bento Cell 3
+
+> 02 · MARKETSADJACENT FORECASTS Cultural heritage digitization'30 · $8.1B Research data management'30 · $6.7B Scholarly infrastructure'30 · $5.3B Digital humanities'30 · $3.2B AI for archaeology'30 · $1.4B source: adjacent research-infrastructure and heritage categories. Sign-shape search is one underbuilt workflow inside them, not a commercial reading service.
+
+### Bento Cell 4
+
+> 03 · VALUE $8.1B Heritage digitization '30; cross-collection sign-shape search is one underbuilt workflow inside that spend.
+
+### Bento Cell 5
+
+> 04 · INSIGHT A cuneiform sign's geometry is a measurable signal.
+
+### Bento Cell 6
+
+> 05.1 · CURRENT TECHMEMORY-BOUND CATALOGUES Digitised tablets become images and catalogue entries. A scholar asking which signs look like this wedge pattern still walks between collections, emails curators, and stitches the answer together from human recall and PDF appendices.
+
+### Bento Cell 7
+
+> 05.2 · OUR TECHPUBLIC CONTROL PACK The cuneiform-control package on PyPI carries the morphology boundary in public: shape metrics, manifest checks, source policy, and the below-target classifier score recorded plainly at 0.021916. Anyone can install it, replay the manifest, and inspect the result without releasing image-bearing corpora or claiming text recovery.
+
+### Bento Cell 8
+
+> 05.3 · BENCHMARKSPHASE-2 RESULT STATUS P5 1NN check0.021916NO-GO Manifest5/5PASS Schema0errors PyPIv0.1.0 P50.021916 · NO-GO P6 diagnostic0.038176 Manifest5/5 PASS Verdict: Governing classifier below target · manifest passes against the SHA-pinned upstream tablet artefact.
+
+### Bento Cell 9
+
+> 06 · MEASUREMENTPHASE-2 RESULT LEDGER One classifier score against one chosen target.
+
+### Bento Cell 10
+
+> 06.1 · RESULT LEDGER · PHASE-2 STATUS P5 · governing 1NN0.021916 · NO-GO P6 · diagnostic0.038176 P70.051826 Manifest5/5 PASS Phase 2 governing score 0.021916 against a 0.6 target. P6 and P7 diagnostics report alongside but do not repair the result. Manifest passes 5/5 against the SHA-pinned 9.28 MB upstream tablet artefact.
+
+### Bento Cell 11
+
+> 07 · KEY METRICSPACK STATUS
+
+### Bento Cell 12
+
+> 07.1 · GOVERNING 1NN CHECK 0.021916 Governing classifier · below 0.6 target, kept public
+
+### Bento Cell 13
+
+> 07.2 · MANIFEST INVARIANTS 5/5 Manifest invariants pass · stdlib-only smoke runner
+
+### Bento Cell 14
+
+> 07.3 · P6 DIAGNOSTIC 0.038176 Diagnostic score only · does not repair the governing result
+
+### Bento Cell 15
+
+> 07.4 · PYPI CONTROL PACK v0.1.0 cuneiform-control on PyPI · Apache-2.0, live 2026-05-04
+
+### Bento Cell 16
+
+> 07.5 · MANIFEST SHA-256 e4d85a…3daa24 9.28 MB upstream artefact · SHA-pinned, verified
+
+### Bento Cell 17
+
+> 08 · DETERMINISMREPLAYABLE PACKET The public packet preserves the same measured boundary.
+
+### Bento Cell 18
+
+> 08.1 · WHAT REPLAYS EXACTLYSHA-PINNED MANIFEST Across two fresh installs, the Phase 2 score (0.021916) hashes identically. The pack validates 5 cross-field invariants with 0 schema errors against the SHA-pinned 9.28 MB artefact, stdlib-only on any Python 3.8+ host. This is not scientific proof of text recovery: the smoke does not re-run the governing 1NN. It proves the public control pack still matches the recorded morphology boundary, byte for byte, so the failed result cannot quietly drift over time.
+
+### Bento Cell 19
+
+> 08.2 · HONEST BLOCKER Honest Blocker · Manifest validation only: the smoke proves shape, not science. It does not repair the classifier result, recover cuneiform text, or release image-bearing corpora. Raw bytes remain private; Traditional-Knowledge protocols, museum image rights, and public-review limits apply. RELEASING.md and .gpd/STATE.md release-state drift pending.
+
+### Bento Cell 20
+
+> 09 ANCIENT SIGNS WITH A SEARCHABLE SHAPE.
+
+### Bento Cell 21
+
+> 09.1 · THIS LAB'S AMBITION The ambition is applied infrastructure for the cuneiform world: measure the geometry of a sign once, then let it travel into catalogue lookup, cross-collection comparison, classroom teaching, and museum metadata — without ever claiming text recovery or releasing image-bearing tablets the field has agreed to protect.
+
+### Bento Cell 22
+
+> 09.2 · WHAT THIS IS Shape-search infrastructure is public, the manifest passes, and the failed classifier score stays on the record.
+
+### Bento Cell 23
+
+> 09.3 · WHAT IT IS NOT The governing classifier missed its 0.6 target. Image-bearing corpora and release-state drift stay outside the pack.
+
+### Bento Cell 24
+
+> 09.4 · ARCHIVES · NEAR-TERM (12–24 MO) Tablet archives gain shape lookup A researcher chasing a wedge pattern across the British Museum, the Louvre, and CDLI no longer relies on memory and email. Sign geometry becomes a queryable field across catalogues, and the answer arrives before the trip is booked.
+
+### Bento Cell 25
+
+> 09.5 · TEACHING · NEAR-TERM (12–24 MO) Cuneiform classrooms see sign families A graduate seminar can group signs by visible form before any language claim enters the room. Students see how wedges relate to wedges, building intuition for variation across scribes, periods, and regions instead of memorising tables.
+
+### Bento Cell 26
+
+> 09.6 · CATALOGUING · MID-TERM (24–48 MO) Museums describe signs by geometry Curators add measured shape descriptors to tablet records alongside provenance and period. Discovery improves for the next generation of scholarship, and the metadata stays honest about what was photographed versus what was read.
+
+### Bento Cell 27
+
+> 09.7 · METHOD · MID-TERM (24–48 MO) Heritage AI keeps its discipline A loud public no-go score makes premature decipherment claims harder to publish unchallenged. Funders, reviewers, and journalists gain a reference for what restraint looks like when an early model misses the threshold its own authors chose.
+
+### Bento Cell 28
+
+> 09.8 · METHOD · PARADIGM (48 MO+) Failed science becomes shared memory Heritage scholarship gains a habit of preserving negative results with the same care as positive ones. A century from now, the next attempt on cuneiform morphology starts from a known floor, not from a forgotten draft, and the field learns faster because of it.
+
+</details>
+
+---
+
+Source mapping: product route `/gnosis/Gnosis-Cuneiform/` -> live public repo `Zer0pa/Cuneiform`. README generated from product-page authority plus retained install/dev commands only.
