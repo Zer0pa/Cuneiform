@@ -16,6 +16,7 @@ python -m pip install -e . pytest
 
 ### 2. Hermetic self-test against bundled fixtures (3 cases, < 1 second)
 pytest -q
+```
 
 <table width="100%">
 <tr>
@@ -69,7 +70,7 @@ pytest -q
 <table width="100%">
 <tr>
 <td width="50%" valign="top">
-<div><b>03 · VALUE</b></div>
+<div><b>03 · VALUE OF MARKET</b></div>
       <div><span>$8.1</span> <span>B</span></div>
       <div>Heritage digitization '30; cross-collection sign-shape search is one underbuilt workflow inside that spend.</div>
 </td>
