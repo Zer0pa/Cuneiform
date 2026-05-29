@@ -1,9 +1,6 @@
 # Cuneiform
 
-## Install / Developer Commands
-
-<!-- INSTALL-DX:START -->
-#### Package Install
+## Package Install
 
 Installable package: `python3.11 -m pip install cuneiform-control`.
 Current release: `0.1.0` on [PyPI](https://pypi.org/project/cuneiform-control/).
@@ -13,43 +10,9 @@ Source: [Zer0pa/Cuneiform](https://github.com/Zer0pa/Cuneiform/).
 python3.11 -m pip install cuneiform-control
 ```
 
-Import smoke:
+For full install, smoke, source, and developer commands, [click here](#install-developer-commands-detailed).
 
-```bash
-python3.11 - <<'PY'
-import importlib.metadata as md
-import cuneiform_control
-
-print("cuneiform-control", md.version("cuneiform-control"))
-PY
-```
-
-
-CLI smoke:
-
-```bash
-cuneiform-smoke --help
-```
-
-Install success only proves package acquisition/import. Product scope, stale PyPI state, platform limits, and blockers remain in the front-door sections below.
-- Use the hyphenated PyPI name for install; the Python module is `cuneiform_control`.
-<!-- INSTALL-DX:END -->
-
-#### Quick Start
-
-Verified end-to-end on 2026-04-25. Commands run from a fresh clone.
-
-```bash
-
-### 1. Install the smoke surface (zero third-party runtime deps; pytest pulled in for tests)
-python3 -m venv /tmp/cuneiform-control
-source /tmp/cuneiform-control/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -e . pytest
-
-### 2. Hermetic self-test against bundled fixtures (3 cases, < 1 second)
-pytest -q
-```
+---
 
 <table width="100%">
 <tr>
@@ -322,3 +285,58 @@ pytest -q
 </td>
 </tr>
 </table>
+
+---
+
+<a id="install-developer-commands-detailed"></a>
+
+## Install / Developer Commands Detailed
+
+<!-- INSTALL-DX:START -->
+#### Package Install
+
+Installable package: `python3.11 -m pip install cuneiform-control`.
+Current release: `0.1.0` on [PyPI](https://pypi.org/project/cuneiform-control/).
+Source: [Zer0pa/Cuneiform](https://github.com/Zer0pa/Cuneiform/).
+
+```bash
+python3.11 -m pip install cuneiform-control
+```
+
+Import smoke:
+
+```bash
+python3.11 - <<'PY'
+import importlib.metadata as md
+import cuneiform_control
+
+print("cuneiform-control", md.version("cuneiform-control"))
+PY
+```
+
+
+CLI smoke:
+
+```bash
+cuneiform-smoke --help
+```
+
+Install success only proves package acquisition/import. Product scope, stale PyPI state, platform limits, and blockers remain in the front-door sections below.
+- Use the hyphenated PyPI name for install; the Python module is `cuneiform_control`.
+<!-- INSTALL-DX:END -->
+
+#### Quick Start
+
+Verified end-to-end on 2026-04-25. Commands run from a fresh clone.
+
+```bash
+
+### 1. Install the smoke surface (zero third-party runtime deps; pytest pulled in for tests)
+python3 -m venv /tmp/cuneiform-control
+source /tmp/cuneiform-control/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e . pytest
+
+### 2. Hermetic self-test against bundled fixtures (3 cases, < 1 second)
+pytest -q
+```
