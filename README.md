@@ -19,6 +19,7 @@ For full install, smoke, source, and developer commands, [click here](#install-d
 <td width="100%" valign="top">
 <div><span><b>00 · GNOSIS-CUNEIFORM</b> · COMPUTATIONAL MORPHOLOGY</span> <span>RESEARCH-READY · P5 NO-GO</span></div>
       <h1>Five thousand years of writing, searchable by <span>its shape.</span></h1>
+      <p><strong>Live experiment. Not a release. Ambition headlined. Claims bounded.</strong></p>
       <p>Cuneiform morphology, kept honest &middot; Gnosis-Cuneiform &middot; PyPI <em>cuneiform-control</em> v0.1.0 &middot; github.com/Zer0pa/Cuneiform</p>
       <p>Cuneiform is one of the oldest writing systems on earth &mdash; five thousand years of pressed marks in clay. Gnosis-Cuneiform measures the geometry of those signs so archives, classrooms, and museums can look across collections by shape. The first attempt at a governing classifier scored <strong>0.021916</strong> against a 0.6 target, and the score stays on the record. This page is shape infrastructure, not a reading claim, and the image-bearing corpora stay outside the public pack.</p>
 </td>
