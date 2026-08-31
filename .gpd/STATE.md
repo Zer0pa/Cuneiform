@@ -26,7 +26,15 @@ upstream manifest (SHA-256 `e4d85a…3daa24`, 9,280,260 bytes).
 HF custody: `Zer0pa/cuneiform-control-artefacts` (private), revision
 `c64e22f671dcce1577233309fd3320258dbd2e09`.
 
-Local tag: `v0.1.0-internal` (annotated; **not** pushed to remote).
+Local staging tag: `v0.1.0-internal` (annotated, local-only; historical Phase
+03 close marker).
+
+Public custody-only release: **`v0.1.0`** (annotated, pushed to `origin/main`
+on 2026-05-04T01:34:04Z, GitHub release published 2026-05-04T01:44:58Z, PyPI
+`cuneiform-control` 0.1.0 Apache-2.0 live via Trusted Publishing). The release
+preserves `NO_GO_GOVERNING_GATE_UNMET` verbatim in release notes, PyPI summary,
+and README. See `RELEASING.md` § "v0.1.0 (Custody-only public release)" for the
+full release spec.
 
 ## Active Work
 
@@ -40,9 +48,15 @@ None. There is no next-phase work scheduled in this lane.
 
 ## Permanent Blockers (until external gate-repair event)
 
-- Public promotion blocked by `NO_GO_GOVERNING_GATE_UNMET`.
+- Scientifically-repaired public promotion remains blocked by
+  `NO_GO_GOVERNING_GATE_UNMET`. The custody-only public release `v0.1.0`
+  (live since 2026-05-04) is bounded to manifest validation; it does not
+  promote the lane scientifically and explicitly preserves the failed gate.
 - Raw image/corpus redistribution blocked by unresolved rights.
-- Licence text `OWNER_DEFERRED`; blocks any remote tag push or public release.
+- Licence: Apache-2.0 (code) + CC-BY-4.0 (docs) declared and consistent across
+  `LICENSE`, `pyproject.toml`, `CITATION.cff`, `.zenodo.json`, and README.
+  Custody-only public release executed under this licence posture; any
+  scientifically-repaired release remains gated on new scientific evidence.
 
 ## Resume
 
